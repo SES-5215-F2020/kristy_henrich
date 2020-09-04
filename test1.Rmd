@@ -1,0 +1,31 @@
+---
+title: "Test"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: lumen
+    highlight: tango
+---
+## 1. Introduction - headers
+we can create headers by placing
+
+### 1.1 You can create bold and italic text
+for example *italic* uses two stars
+additionally you can create **bold** by using four stars
+
+```{r}
+a<-5
+a+5
+```
+you can also add inline code, we know that 2+2 is `r 2+2`
+
+## 2. Section 2 - style and bullets
+For example, in R Markdown, you can use lists as such:
+
+1. This is the first element
+2. This is the second element
+
+```{r}
+print ('This is another piece of code')
+```

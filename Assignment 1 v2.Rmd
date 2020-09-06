@@ -38,7 +38,7 @@ I decided to conduct a census-tract level analysis in the nine-county SF Bay Are
 
 Unit of analysis: census-tract
 
-  1. Bay Area county (categorical) : bayarea_county
+  1. Bay Area county (categorical) : county
   2. Majority race / ethnicity of the population (categorical) : maj_re
   3. Whether the majority of the units are occupied by 
       renters vs. owners (categorical) : unit_type
@@ -208,9 +208,10 @@ bayareaCA2018
 
 ## Showing the first 10 rows
 Finally, I pulled up the first 10 rows for the assignment. To recap, I am conducting an analysis on the following:
+
   1. unit of analysis : tract-level
   2. definition of sample population : census tracts in the nine-county Bay Area
-  3. variables in analysis : Bay Area county (categorical), majority race / ethnicity of the population (categorical), whether the majority of the units are occupied by renters vs. owners (categorical), percent of population that has no internet access (continuous), median income (continuous), average household size (continuous): avg_hh_size
+  3. variables in analysis : Bay Area county (categorical), majority race / ethnicity of the population (categorical), whether the majority of the units are occupied by renters vs. owners (categorical), percent of population that has no internet access (continuous), median income (continuous), average household size (continuous)
   4. number of observations in data set: 1,588 observations of 6 variables
 
 ```{r}

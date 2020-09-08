@@ -11,7 +11,7 @@ library(tidyverse)
 ```
 
 ## Exploring which variables to use 
-
+test test test
 I explored all three levels of data tables from the 2018 ACS 5-Year estimates to understand the variables available. I narrowed down to the tract-level analysis from the ACS 5-Year estimates because I wanted to include estimates for geographic areas with populations of fewer than 20,000 people, a tip I learned from Cat's assignment. 
 
 ```{r load person-level microdata variables}

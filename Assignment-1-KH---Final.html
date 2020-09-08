@@ -583,6 +583,1596 @@ select (county, maj_re, maj_units_rented, pct_no_internet,
 ##  8 Alameda no_maj_re TRUE                      0.161        20044         3.53
 ##  9 Alameda nh_white  FALSE                     0.0247       83750         2.4 
 ## 10 Alameda no_maj_re TRUE                      0.121        36841         2.3</code></pre>
+<pre class="r"><code>write.csv(bayareaCA2018)</code></pre>
+<pre><code>## &quot;&quot;,&quot;county&quot;,&quot;maj_re&quot;,&quot;maj_units_rented&quot;,&quot;pct_no_internet&quot;,&quot;med_incomeE&quot;,&quot;avg_hh_sizeE&quot;
+## &quot;1&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0,44375,3.65
+## &quot;2&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0139240506329114,94732,2.63
+## &quot;3&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0750883392226148,40281,3.31
+## &quot;4&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0275633958103638,61599,2.91
+## &quot;5&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.105930470347648,54400,2.44
+## &quot;6&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0635005336179296,63979,2.12
+## &quot;7&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0321384425216316,42691,2.13
+## &quot;8&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.161420500403551,20044,3.53
+## &quot;9&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0246723207401696,83750,2.4
+## &quot;10&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.120541205412054,36841,2.3
+## &quot;11&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.164411644116441,37117,2.45
+## &quot;12&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.104262968669748,33584,2.62
+## &quot;13&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.108504398826979,36288,2.7
+## &quot;14&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.225806451612903,22908,1.47
+## &quot;15&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.139656982849142,47358,1.61
+## &quot;16&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0263452914798206,69524,2.63
+## &quot;17&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.193569993302076,22344,3.22
+## &quot;18&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.113989637305699,47357,2.59
+## &quot;19&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.128137384412153,21203,2.5
+## &quot;20&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0376237623762376,63125,2.26
+## &quot;21&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0481064483111566,43750,2.57
+## &quot;22&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.21832884097035,30437,2.4
+## &quot;23&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.023943661971831,57222,2.57
+## &quot;24&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0511590727418066,59200,2.63
+## &quot;25&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0146310432569975,77796,2.34
+## &quot;26&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0690690690690691,54010,2.41
+## &quot;27&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.038562091503268,47045,2.18
+## &quot;28&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0914804469273743,36671,3.42
+## &quot;29&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.168234643054787,34947,3.4
+## &quot;30&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.133245382585752,31265,4.11
+## &quot;31&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0891590678824721,45313,2.93
+## &quot;32&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0379851362510322,63083,3.17
+## &quot;33&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.07837384744342,46690,2.85
+## &quot;34&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0410798122065728,58380,3.09
+## &quot;35&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.00710900473933649,79944,2.98
+## &quot;36&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0,82620,2.93
+## &quot;37&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0470324748040314,59929,2.77
+## &quot;38&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.067,7461,2.63
+## &quot;39&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.115723923196679,43914,2.2
+## &quot;40&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0447761194029851,32975,2.11
+## &quot;41&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0378732702112163,21061,2.17
+## &quot;42&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0,4102,3.19
+## &quot;43&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0340960071781068,107241,2.87
+## &quot;44&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0813269127875869,44931,2.72
+## &quot;45&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.158008658008658,30791,3
+## &quot;46&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0605911330049261,46604,2.48
+## &quot;47&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0614173228346457,62792,2.94
+## &quot;48&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0664596273291925,62429,2.07
+## &quot;49&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0953510436432638,42681,2.47
+## &quot;50&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.182535996284255,25631,2.66
+## &quot;51&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,FALSE,0.091762252346194,32101,3.57
+## &quot;52&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,FALSE,0.0913705583756345,29252,4.15
+## &quot;53&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0382830626450116,62521,2.85
+## &quot;54&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0758317025440313,15636,2.6
+## &quot;55&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.115876598946576,35747,3.25
+## &quot;56&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.12258064516129,44288,2.62
+## &quot;57&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.17461482024945,28607,3.06
+## &quot;58&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0787508486082824,32939,2.79
+## &quot;59&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.107039537126326,44375,2.75
+## &quot;60&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0134874759152216,83487,3.27
+## &quot;61&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0403439153439153,64777,2.63
+## &quot;62&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.109826589595376,43864,2.77
+## &quot;63&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0730337078651685,50749,2.98
+## &quot;64&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0709979906229069,39583,3.5
+## &quot;65&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.135391923990499,33272,3.32
+## &quot;66&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.156297420333839,28729,3.62
+## &quot;67&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0903248839700107,51227,2.88
+## &quot;68&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0633608815426997,52197,2.13
+## &quot;69&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0857321652065081,38406,2.56
+## &quot;70&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0872011251758087,50000,2.16
+## &quot;71&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0425824175824176,50729,2.98
+## &quot;72&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0836879432624113,41455,2.54
+## &quot;73&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.165957446808511,35015,3.34
+## &quot;74&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.153369160810252,26076,3.06
+## &quot;75&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,FALSE,0.22354694485842,24980,3.47
+## &quot;76&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.248402555910543,22500,4
+## &quot;77&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.24248496993988,22891,3.86
+## &quot;78&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0358056265984655,52560,2.48
+## &quot;79&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0278776978417266,35725,2.69
+## &quot;80&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.191605839416058,47830,2.29
+## &quot;81&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0526762956669499,41883,2.34
+## &quot;82&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0702146690518784,56319,2.32
+## &quot;83&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0101010101010101,65252,2.91
+## &quot;84&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0429082240762813,41169,3.62
+## &quot;85&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0342250196695515,79870,2.4
+## &quot;86&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0982885085574572,44420,2.47
+## &quot;87&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0391444713478612,62284,2.87
+## &quot;88&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0940484937545922,33485,2.69
+## &quot;89&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.137254901960784,30190,2.73
+## &quot;90&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0360054347826087,41628,2.97
+## &quot;91&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0457142857142857,58536,2.52
+## &quot;92&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.135667396061269,24880,3.88
+## &quot;93&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0741233910341767,45780,3.31
+## &quot;94&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.062093435836783,41708,2.53
+## &quot;95&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0279232111692845,27440,2.76
+## &quot;96&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0696705793260129,49464,2.52
+## &quot;97&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.12070006035003,40851,2.57
+## &quot;98&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0431778929188256,41040,3.46
+## &quot;99&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.00457142857142857,57772,2.17
+## &quot;100&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.12914093206064,52632,2.66
+## &quot;101&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0760279286268425,41496,1.99
+## &quot;102&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.091283459162663,83300,2.24
+## &quot;103&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,TRUE,0.201307800093414,27925,1.98
+## &quot;104&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.1480044345898,26528,1.75
+## &quot;105&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.429601153291687,18868,3.39
+## &quot;106&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,TRUE,0.390977443609023,13365,1.97
+## &quot;107&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.139893873613121,38427,2.65
+## &quot;108&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0483797352806937,43521,3.02
+## &quot;109&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0268551236749117,48810,2.88
+## &quot;110&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.016374269005848,82600,2.26
+## &quot;111&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0465002447381302,47904,2.08
+## &quot;112&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.229695431472081,21356,2.58
+## &quot;113&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.216666666666667,29566,2.47
+## &quot;114&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0612878200155159,50996,2.27
+## &quot;115&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.188304093567251,28817,2.95
+## &quot;116&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0809090909090909,48373,2.77
+## &quot;117&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.325440194292653,20185,3.23
+## &quot;118&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.245762711864407,24792,3.34
+## &quot;119&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0441113490364026,48485,3.05
+## &quot;120&quot;,&quot;Alameda&quot;,&quot;nh_black&quot;,TRUE,0.211745244003309,30381,2.28
+## &quot;121&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0124707716289945,88393,2.68
+## &quot;122&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.105569409808811,53615,2.25
+## &quot;123&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.226998491704374,20597,3.4
+## &quot;124&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.238605898123324,21083,2.9
+## &quot;125&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.254367934224049,26170,2.95
+## &quot;126&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.281266490765172,20768,3.57
+## &quot;127&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.266493055555556,20133,3.75
+## &quot;128&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.119619899385131,34387,2.96
+## &quot;129&quot;,&quot;Alameda&quot;,&quot;nh_black&quot;,FALSE,0.116809116809117,32026,2.53
+## &quot;130&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0566666666666667,68571,2.85
+## &quot;131&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.00842358604091456,78897,2.53
+## &quot;132&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0491283676703645,64196,2.6
+## &quot;133&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0630550621669627,37963,2.45
+## &quot;134&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.31415420023015,36641,1.65
+## &quot;135&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.024127531236536,79020,2.36
+## &quot;136&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.166666666666667,40871,2.37
+## &quot;137&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.323624595469256,15214,1.94
+## &quot;138&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0466867469879518,81012,2.76
+## &quot;139&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0863914373088685,15763,2.53
+## &quot;140&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0577069096431283,51556,2.88
+## &quot;141&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.030840400925212,74227,2.33
+## &quot;142&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.045956951716114,72500,2.85
+## &quot;143&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.156346749226006,43056,2.01
+## &quot;144&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0750680669000389,50069,2.22
+## &quot;145&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.102513227513228,47693,2.47
+## &quot;146&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0851963746223565,37012,2.85
+## &quot;147&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.141118421052632,34972,2.34
+## &quot;148&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0493218249075216,45925,2.33
+## &quot;149&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.153225806451613,33281,2.54
+## &quot;150&quot;,&quot;Alameda&quot;,&quot;nh_black&quot;,TRUE,0.169491525423729,19645,2.52
+## &quot;151&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0517965468968735,51950,1.85
+## &quot;152&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0722727272727273,31335,2.97
+## &quot;153&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.236099230111206,24012,2.63
+## &quot;154&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.336497890295359,20700,3.14
+## &quot;155&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.289347079037801,25919,3.2
+## &quot;156&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.109184328837508,28478,2.61
+## &quot;157&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.10290986515259,35860,2.34
+## &quot;158&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.202730375426621,20223,2.28
+## &quot;159&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.198950131233596,21633,3.12
+## &quot;160&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.272795779954785,20727,3.39
+## &quot;161&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0607394366197183,64141,2.66
+## &quot;162&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0478309232480534,66207,2.26
+## &quot;163&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.329307056579784,24885,3.81
+## &quot;164&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.236363636363636,26274,3.22
+## &quot;165&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.148577449947313,22747,3.77
+## &quot;166&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.29642545771578,21298,3.7
+## &quot;167&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.272475795297372,23080,3.58
+## &quot;168&quot;,&quot;Alameda&quot;,&quot;nh_black&quot;,TRUE,0.242397914856646,23943,2.94
+## &quot;169&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0409731113956466,75797,2.47
+## &quot;170&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0524632117722329,39855,2.25
+## &quot;171&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0721769499417928,50230,2.27
+## &quot;172&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0786581839213418,41067,2.17
+## &quot;173&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0322333077513431,4554,2.41
+## &quot;174&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0456852791878173,13581,2.82
+## &quot;175&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0711267605633803,63487,2.55
+## &quot;176&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0736137667304015,62000,2.97
+## &quot;177&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0504171200580341,42079,2.73
+## &quot;178&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0828547990155866,51607,2.48
+## &quot;179&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0342327829238824,84589,2.44
+## &quot;180&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.122655122655123,42741,2.39
+## &quot;181&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0614502253174928,66738,2.03
+## &quot;182&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.207865168539326,29459,2.51
+## &quot;183&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.146341463414634,46014,2.28
+## &quot;184&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.292274446245273,22191,3.75
+## &quot;185&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.174033149171271,26471,3.56
+## &quot;186&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.119266055045872,35818,2.65
+## &quot;187&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0721903199343724,45120,2.76
+## &quot;188&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0114401076716016,71629,2.41
+## &quot;189&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0817307692307692,27871,2.29
+## &quot;190&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.160506863780359,42617,2.64
+## &quot;191&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.186096256684492,30341,2.71
+## &quot;192&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0987084870848708,35179,2.69
+## &quot;193&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.10806916426513,54459,2.76
+## &quot;194&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0505780346820809,38345,3.09
+## &quot;195&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.177083333333333,35188,3.32
+## &quot;196&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.229974160206718,19941,3.13
+## &quot;197&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0327249842668345,80221,2.37
+## &quot;198&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0611729019211325,35450,2.55
+## &quot;199&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0562719812426729,47872,2.27
+## &quot;200&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.100089365504915,41049,2.33
+## &quot;201&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.041025641025641,61883,2.83
+## &quot;202&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0269662921348315,65200,2.38
+## &quot;203&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0557710960232784,43030,2.37
+## &quot;204&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0660098522167488,47009,2.44
+## &quot;205&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0737618545837724,48935,2.29
+## &quot;206&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.068021567814185,53065,2.73
+## &quot;207&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.126632595116411,39876,2.49
+## &quot;208&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.11635565312843,30491,3.61
+## &quot;209&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.168076923076923,32011,2.98
+## &quot;210&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0506993006993007,39851,3.57
+## &quot;211&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.141488162344983,31717,2.9
+## &quot;212&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0,34258,2.97
+## &quot;213&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.194555112881806,31763,2.66
+## &quot;214&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.154716981132075,29549,2.77
+## &quot;215&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0555114988104679,45420,3.44
+## &quot;216&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0764587525150905,46012,3.4
+## &quot;217&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0597345132743363,39679,3.1
+## &quot;218&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0134048257372654,86250,3.26
+## &quot;219&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0,72848,3.19
+## &quot;220&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0639396346306593,45779,3.05
+## &quot;221&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0497076023391813,39806,3.55
+## &quot;222&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0312732688011914,89130,2.71
+## &quot;223&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0423228346456693,45720,2.67
+## &quot;224&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0350877192982456,52929,3.22
+## &quot;225&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,TRUE,0.169321039396479,49950,2.57
+## &quot;226&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0510912698412698,43488,3.29
+## &quot;227&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0869104398516163,38031,3.71
+## &quot;228&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0275569687334393,57400,2.93
+## &quot;229&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0428973277074543,85333,3.05
+## &quot;230&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,FALSE,0.0621230398069964,40575,3.31
+## &quot;231&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.108272506082725,36901,3.35
+## &quot;232&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.107843137254902,37765,3
+## &quot;233&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0946969696969697,35833,3.09
+## &quot;234&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.112064343163539,31206,3.49
+## &quot;235&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.117553613979349,39887,2.73
+## &quot;236&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0870069605568446,30202,4.42
+## &quot;237&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0622655663915979,35081,3.85
+## &quot;238&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0316417910447761,62096,3.23
+## &quot;239&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0692464358452139,46371,3.62
+## &quot;240&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.121434745030251,50021,3.16
+## &quot;241&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.030952380952381,51635,3.22
+## &quot;242&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0159521435692921,54865,3.2
+## &quot;243&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0517879161528977,93086,3.27
+## &quot;244&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0125786163522013,66648,3.41
+## &quot;245&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0252873563218391,68474,3.3
+## &quot;246&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.176733780760626,32661,3.66
+## &quot;247&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0680851063829787,44088,3.11
+## &quot;248&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0715020576131687,61153,2.69
+## &quot;249&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0306271268838114,60795,2.81
+## &quot;250&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0598911070780399,60462,2.86
+## &quot;251&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0700152207001522,52763,2.48
+## &quot;252&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0430894308943089,51250,2.08
+## &quot;253&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.217868338557994,26523,1.82
+## &quot;254&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.047645125958379,67837,1.82
+## &quot;255&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0112359550561798,53979,1.77
+## &quot;256&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0368188512518409,88088,2.64
+## &quot;257&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0499375780274657,86042,2.7
+## &quot;258&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.124626865671642,26828,2.54
+## &quot;259&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.129533678756477,20859,3.44
+## &quot;260&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0305591677503251,43718,2.4
+## &quot;261&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.156011730205279,31301,3.08
+## &quot;262&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0893730546909738,35387,3.42
+## &quot;263&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.138424821002387,35711,2.67
+## &quot;264&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.116158113730929,35195,3.18
+## &quot;265&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.163693599160546,29558,3.39
+## &quot;266&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.160639192598823,24889,3.75
+## &quot;267&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0860685630926331,36615,3.44
+## &quot;268&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0505097312326228,40665,3.72
+## &quot;269&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.127002288329519,33946,2.41
+## &quot;270&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0509065550906555,41926,3.29
+## &quot;271&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.133620689655172,31384,3.58
+## &quot;272&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.107254116599911,34183,3.26
+## &quot;273&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0412272291466922,37173,3.99
+## &quot;274&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0778688524590164,31037,3.49
+## &quot;275&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.055930568948891,28234,4.13
+## &quot;276&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.00558659217877095,52328,3.79
+## &quot;277&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.017563117453348,62670,3.37
+## &quot;278&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0469916556873079,48850,3.42
+## &quot;279&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0449667858967808,40117,3.42
+## &quot;280&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.161931818181818,27371,2.94
+## &quot;281&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0165400089405454,56942,3.11
+## &quot;282&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0599547511312217,62849,2.68
+## &quot;283&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.1156271899089,25999,3.4
+## &quot;284&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0748210800260247,33264,3.42
+## &quot;285&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.191852825229961,35265,2.62
+## &quot;286&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.207370737073707,33155,1.98
+## &quot;287&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0275423728813559,61438,3.11
+## &quot;288&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.104087452471483,32145,2.77
+## &quot;289&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.154545454545455,28938,3.37
+## &quot;290&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.145596165368484,28798,3.14
+## &quot;291&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.038164002062919,34162,3.77
+## &quot;292&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0646029609690444,27963,3.28
+## &quot;293&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.161978661493695,30809,3.45
+## &quot;294&quot;,&quot;Alameda&quot;,&quot;hisp_latino&quot;,TRUE,0.174067495559503,27699,3.97
+## &quot;295&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.101568951279934,31305,3.34
+## &quot;296&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.102762430939227,38236,2.99
+## &quot;297&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0238379022646007,41042,3.79
+## &quot;298&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.043557168784029,40120,4.23
+## &quot;299&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0409872190392243,73130,2.98
+## &quot;300&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0812365204888569,40838,3.2
+## &quot;301&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,TRUE,0.0261484098939929,98854,3.02
+## &quot;302&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0582865168539326,92017,3.11
+## &quot;303&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,TRUE,0.0761363636363636,54651,2.56
+## &quot;304&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0340007555723461,57526,2.88
+## &quot;305&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,TRUE,0.054,75549,2.39
+## &quot;306&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,TRUE,0.0627107215104518,46131,3.08
+## &quot;307&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.119795003203075,38179,3.28
+## &quot;308&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,TRUE,0.192582663092046,35488,2.68
+## &quot;309&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0826952526799387,55310,3.15
+## &quot;310&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.16,48059,3
+## &quot;311&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0460157126823793,75139,3.12
+## &quot;312&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0199335548172757,68393,3.05
+## &quot;313&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,TRUE,0.0840108401084011,70234,2.99
+## &quot;314&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.025987525987526,62428,3.44
+## &quot;315&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.093859649122807,51028,3.32
+## &quot;316&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.19573999265516,30220,1.7
+## &quot;317&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0868055555555556,44545,1.75
+## &quot;318&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.11262026032824,53479,1.55
+## &quot;319&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0925756186984418,59688,1.74
+## &quot;320&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0795321637426901,65307,1.8
+## &quot;321&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.106222501571339,52191,1.55
+## &quot;322&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.121212121212121,49182,1.87
+## &quot;323&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.146324054246966,32305,1.75
+## &quot;324&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.200578034682081,22273,2.23
+## &quot;325&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.179948586118252,25448,2.74
+## &quot;326&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.278236914600551,15015,3.97
+## &quot;327&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,TRUE,0.240520043336945,17923,3.22
+## &quot;328&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.133412042502952,23877,2.97
+## &quot;329&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.163135593220339,26594,2.96
+## &quot;330&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.272463768115942,19260,3.61
+## &quot;331&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.238461538461538,21842,3.39
+## &quot;332&quot;,&quot;Alameda&quot;,&quot;nh_black&quot;,TRUE,0.237179487179487,16635,2.53
+## &quot;333&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0387665198237885,63095,1.4
+## &quot;334&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0422391857506361,68316,1.88
+## &quot;335&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0.0225947521865889,78813,2.03
+## &quot;336&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.11491935483871,47875,1.84
+## &quot;337&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.107413010590015,39458,3.55
+## &quot;338&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0502923976608187,43838,3.35
+## &quot;339&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.042443729903537,48116,3.05
+## &quot;340&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0425023877745941,82235,2.66
+## &quot;341&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0368144252441773,38403,3.22
+## &quot;342&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0774246128769356,64173,2.55
+## &quot;343&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0.0486147412441192,71445,3.07
+## &quot;344&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,TRUE,0.0327731092436975,79647,2.81
+## &quot;345&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0395738203957382,53588,3.06
+## &quot;346&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0526315789473684,73420,2.83
+## &quot;347&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0584837545126354,61288,2.6
+## &quot;348&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.0330537740503207,70186,2.39
+## &quot;349&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.00548245614035088,106054,3.58
+## &quot;350&quot;,&quot;Alameda&quot;,&quot;nh_asian&quot;,FALSE,0.0074468085106383,95690,3.53
+## &quot;351&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0496894409937888,45500,2.81
+## &quot;352&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.161873840445269,30257,3.12
+## &quot;353&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0559006211180124,51034,2.68
+## &quot;354&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0176470588235294,72716,2.82
+## &quot;355&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,TRUE,0.139910313901345,36627,3.09
+## &quot;356&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0151734104046243,60469,3.13
+## &quot;357&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0.0479041916167665,52181,2.66
+## &quot;358&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,TRUE,0,NA,1.94
+## &quot;359&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,FALSE,0,106250,1.97
+## &quot;360&quot;,&quot;Alameda&quot;,&quot;nh_white&quot;,FALSE,0,94844,1.67
+## &quot;361&quot;,&quot;Alameda&quot;,&quot;no_maj_re&quot;,NA,NA,NA,NA
+## &quot;362&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0209720372836218,66392,2.51
+## &quot;363&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,TRUE,0.167005076142132,52388,2.28
+## &quot;364&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0500263296471827,86823,2.91
+## &quot;365&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0,67279,2.7
+## &quot;366&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.00665680473372781,79375,2.87
+## &quot;367&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0574898785425101,40075,3.6
+## &quot;368&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,FALSE,0.10087370929309,26349,3.6
+## &quot;369&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.117940199335548,24578,3.82
+## &quot;370&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.208428246013667,30252,2.72
+## &quot;371&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.232558139534884,26306,3.49
+## &quot;372&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.162885398487493,24713,3.54
+## &quot;373&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.0771294433266264,33688,2.83
+## &quot;374&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.0614228899690676,43535,2.43
+## &quot;375&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0647149460708783,40520,2.89
+## &quot;376&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.0821039127645927,23192,3.56
+## &quot;377&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.067433188315724,35141,2.53
+## &quot;378&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0323974082073434,54061,2.55
+## &quot;379&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0287483414418399,43306,3.22
+## &quot;380&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0641613198900092,39543,2.57
+## &quot;381&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.2,29355,2.48
+## &quot;382&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.0346368715083799,46382,2.45
+## &quot;383&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.0217076700434153,29013,2.65
+## &quot;384&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.180750112968821,23696,2.75
+## &quot;385&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.256774193548387,21452,2.98
+## &quot;386&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.178240740740741,25415,2.8
+## &quot;387&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.128918495297806,24609,3.53
+## &quot;388&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0411067193675889,35174,2.87
+## &quot;389&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.111111111111111,30343,3.16
+## &quot;390&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.162545601945683,26912,3.05
+## &quot;391&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,FALSE,0.158044343376919,23214,4.16
+## &quot;392&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0146088595664467,59000,2.84
+## &quot;393&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.116500237755587,46111,2.64
+## &quot;394&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,TRUE,0.0442415730337079,46288,2.23
+## &quot;395&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.146997929606625,30989,2.99
+## &quot;396&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.12604501607717,20944,2.77
+## &quot;397&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.058869093725794,29147,3.27
+## &quot;398&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,TRUE,0.131212723658052,33727,2.05
+## &quot;399&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0401709401709402,47558,2.61
+## &quot;400&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0345876092740403,60053,2.63
+## &quot;401&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0656284760845384,58274,2.56
+## &quot;402&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0798744332054412,29986,2.66
+## &quot;403&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,TRUE,0.222062004325883,32375,1.56
+## &quot;404&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0271139705882353,43552,2.8
+## &quot;405&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0569877883310719,39739,3.01
+## &quot;406&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.107781939242613,45883,2.44
+## &quot;407&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0305980528511822,61691,2.66
+## &quot;408&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0613425925925926,56571,2.83
+## &quot;409&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0549907578558226,52335,3.03
+## &quot;410&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.025244556642474,77639,2.37
+## &quot;411&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.108619481429573,66384,2.61
+## &quot;412&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0211097708082027,79018,3.05
+## &quot;413&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0341604898485337,63860,2.76
+## &quot;414&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0401218892839005,57092,2.76
+## &quot;415&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0569491525423729,38097,3.31
+## &quot;416&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.183518005540166,25074,3.88
+## &quot;417&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.0532859680284192,25762,3.75
+## &quot;418&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.127659574468085,22447,3.38
+## &quot;419&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.130179991628296,22141,2.9
+## &quot;420&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,FALSE,0.144503546099291,23526,3.74
+## &quot;421&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.226708074534162,22138,3.08
+## &quot;422&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0415841584158416,59831,2.48
+## &quot;423&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0549450549450549,55788,2.3
+## &quot;424&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0365853658536585,65078,2.39
+## &quot;425&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0590717299578059,76063,2.25
+## &quot;426&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.182837913628716,26064,2.73
+## &quot;427&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.202774813233725,20833,3.59
+## &quot;428&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.164609053497942,21460,3.37
+## &quot;429&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.145974955277281,27926,2.78
+## &quot;430&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0297766749379653,41493,2.35
+## &quot;431&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0754138565297364,51983,2.37
+## &quot;432&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.175728920409771,25311,2.77
+## &quot;433&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0854771784232365,34595,2.81
+## &quot;434&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.159827213822894,27704,2.6
+## &quot;435&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0283400809716599,46136,2.85
+## &quot;436&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0898472596585804,59018,3.18
+## &quot;437&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0586158192090395,51711,2.59
+## &quot;438&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0391849529780564,39873,3.11
+## &quot;439&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.138453764527539,25635,2.6
+## &quot;440&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.094273127753304,27322,3.37
+## &quot;441&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0448577680525164,71125,2.69
+## &quot;442&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.169027384324835,29148,3.39
+## &quot;443&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.095751854349292,25768,3.58
+## &quot;444&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,FALSE,0.0536105032822757,26149,3.49
+## &quot;445&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.114754098360656,23238,3.6
+## &quot;446&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0929899856938484,30724,2.5
+## &quot;447&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0153061224489796,67102,3.17
+## &quot;448&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.026840490797546,73964,2.51
+## &quot;449&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0261531145981931,81692,2.94
+## &quot;450&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0347185691741189,58828,2.73
+## &quot;451&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0487364620938628,63568,2.51
+## &quot;452&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.04691191360108,44007,3.82
+## &quot;453&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.114769520225776,31893,2.61
+## &quot;454&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.136642784032753,32423,3.02
+## &quot;455&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.0434389140271493,36042,2.67
+## &quot;456&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0444353852425601,48340,2.64
+## &quot;457&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,TRUE,0.132225913621262,31789,2.61
+## &quot;458&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0347097546379414,57215,2.6
+## &quot;459&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0936555891238671,53789,2.68
+## &quot;460&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.115316901408451,49040,2.6
+## &quot;461&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0382284382284382,57957,2.52
+## &quot;462&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.00748663101604278,52288,2.54
+## &quot;463&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0,57574,3.12
+## &quot;464&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0333462582396278,62770,2.4
+## &quot;465&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0570342205323194,54538,2.95
+## &quot;466&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.104838709677419,31173,2.77
+## &quot;467&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0289519397799653,64198,1.9
+## &quot;468&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0146782085058336,36501,3.36
+## &quot;469&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.10580204778157,36404,2.39
+## &quot;470&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0633195953540652,33594,2.71
+## &quot;471&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0687450039968026,32719,2.81
+## &quot;472&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.202838557066824,22099,3.34
+## &quot;473&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0144343739509903,65705,2.52
+## &quot;474&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0698795180722892,22179,2.61
+## &quot;475&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.073240589198036,55270,2.64
+## &quot;476&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0354838709677419,79375,2.79
+## &quot;477&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0743460302891235,45471,2.72
+## &quot;478&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0905052748473071,33226,2.67
+## &quot;479&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0547404063205418,32130,2.87
+## &quot;480&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0452261306532663,46029,2.37
+## &quot;481&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.108478146392838,31925,3.14
+## &quot;482&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.062789867998573,41948,2.27
+## &quot;483&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0232350312779267,52409,2.63
+## &quot;484&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0808926080892608,55804,2.29
+## &quot;485&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.234249713631157,23122,3.02
+## &quot;486&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,TRUE,0.0615384615384615,49571,2.28
+## &quot;487&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0279627163781625,65417,2.82
+## &quot;488&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0690406976744186,106897,2.57
+## &quot;489&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.025811823480433,82760,2.82
+## &quot;490&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0995812005583993,39371,2.61
+## &quot;491&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0674157303370786,35305,3.25
+## &quot;492&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,TRUE,0.125260960334029,21833,2.05
+## &quot;493&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0609364977549711,45343,2.72
+## &quot;494&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0940438871473354,40008,2.62
+## &quot;495&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0908045977011494,49470,2.3
+## &quot;496&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0523114355231144,50169,3.07
+## &quot;497&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.101295641931684,37304,2.85
+## &quot;498&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0299116247450714,47321,2.92
+## &quot;499&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,TRUE,0.0707465277777778,37464,2.27
+## &quot;500&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.140253565768621,20866,3.89
+## &quot;501&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.21469465648855,22692,3.46
+## &quot;502&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0972396486825596,35563,3.65
+## &quot;503&quot;,&quot;ContraCosta&quot;,&quot;nh_asian&quot;,FALSE,0.00609013398294762,57656,3.8
+## &quot;504&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,NA,NA,NA,NA
+## &quot;505&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.174433518597691,28918,3
+## &quot;506&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0826513911620295,39286,3.12
+## &quot;507&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0571017274472169,33211,3.35
+## &quot;508&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.102960671674768,42313,3.82
+## &quot;509&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0536817102137767,36124,3.57
+## &quot;510&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.00463965357253325,41907,3.64
+## &quot;511&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0614444843693856,47575,3.31
+## &quot;512&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.071549842347805,25462,3.13
+## &quot;513&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0647435897435897,28908,3.77
+## &quot;514&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.096483704974271,43850,3.12
+## &quot;515&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0657246138678935,43090,3.32
+## &quot;516&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.116177389131793,32125,2.83
+## &quot;517&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0880138969310944,36676,2.55
+## &quot;518&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.020258863252673,60506,2.78
+## &quot;519&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.16414686825054,31566,3.02
+## &quot;520&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0651757188498403,54566,2.55
+## &quot;521&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.207974980453479,30325,3.01
+## &quot;522&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0568603213844252,59675,2.43
+## &quot;523&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0284280936454849,44635,3.59
+## &quot;524&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.122257053291536,26941,3.13
+## &quot;525&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0434322033898305,33871,3.46
+## &quot;526&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0802325581395349,33668,3.31
+## &quot;527&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0690335305719921,36411,3.31
+## &quot;528&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,FALSE,0.107027724049001,25275,3.94
+## &quot;529&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0424063116370809,61458,2.66
+## &quot;530&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.106457925636008,46977,2.56
+## &quot;531&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,TRUE,0.119788425637834,64113,1.79
+## &quot;532&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,TRUE,0.0374627501064283,58685,2.23
+## &quot;533&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0489741892786234,34256,3.04
+## &quot;534&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0234029095509171,40686,2.77
+## &quot;535&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0412311265969803,55823,2.76
+## &quot;536&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.182299947005829,30422,2.75
+## &quot;537&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0807778608825729,52193,2.75
+## &quot;538&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0518977536793184,29401,3.07
+## &quot;539&quot;,&quot;ContraCosta&quot;,&quot;hisp_latino&quot;,TRUE,0.248728094968909,20487,3.67
+## &quot;540&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0318840579710145,56200,2.52
+## &quot;541&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,TRUE,0.0336590662323561,64745,2.04
+## &quot;542&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0212844036697248,62428,2.3
+## &quot;543&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,TRUE,0.0590094836670179,49643,1.88
+## &quot;544&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,TRUE,0.0937411498159162,52464,1.97
+## &quot;545&quot;,&quot;ContraCosta&quot;,&quot;nh_asian&quot;,FALSE,0.0275974025974026,65720,2.85
+## &quot;546&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.00568181818181818,70673,2.88
+## &quot;547&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0134443021766965,83552,2.92
+## &quot;548&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0267857142857143,64284,2.57
+## &quot;549&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0687142113482561,88510,3.08
+## &quot;550&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.00461361014994233,76486,3.21
+## &quot;551&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0824011931394482,70074,2.5
+## &quot;552&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0224899598393574,76842,3.09
+## &quot;553&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0437804030576789,71393,2.73
+## &quot;554&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0407925407925408,83498,2.92
+## &quot;555&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0752302968270215,40500,1.35
+## &quot;556&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.148478099480327,34858,1.33
+## &quot;557&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0571646341463415,50086,1.46
+## &quot;558&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0147783251231527,36250,3.32
+## &quot;559&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0422156493681097,31891,3.66
+## &quot;560&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0729893072989307,42214,3.24
+## &quot;561&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0797872340425532,27847,3.74
+## &quot;562&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0751173708920188,45701,3.16
+## &quot;563&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0356970574047275,71182,2.53
+## &quot;564&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0,78264,3.04
+## &quot;565&quot;,&quot;ContraCosta&quot;,&quot;no_maj_re&quot;,FALSE,0.0487876132047911,83956,3.37
+## &quot;566&quot;,&quot;ContraCosta&quot;,&quot;nh_asian&quot;,TRUE,0.0493587252234745,71035,3.06
+## &quot;567&quot;,&quot;ContraCosta&quot;,&quot;nh_asian&quot;,FALSE,0.0221757322175732,94688,3.49
+## &quot;568&quot;,&quot;ContraCosta&quot;,&quot;nh_asian&quot;,FALSE,0.00510204081632653,112692,3.83
+## &quot;569&quot;,&quot;ContraCosta&quot;,&quot;nh_white&quot;,FALSE,0.0547486033519553,47995,2.83
+## &quot;570&quot;,&quot;Marin&quot;,&quot;no_maj_re&quot;,TRUE,0.0420711974110032,36927,2.7
+## &quot;571&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0402632597754549,42868,2.26
+## &quot;572&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.15426251691475,42185,2.42
+## &quot;573&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0247831474597274,80054,2.78
+## &quot;574&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0248557478917,74140,2.44
+## &quot;575&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0704989154013015,37215,1.93
+## &quot;576&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0623869801084991,53655,2.39
+## &quot;577&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.104661389621812,44005,2.63
+## &quot;578&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.132420091324201,44773,2.13
+## &quot;579&quot;,&quot;Marin&quot;,&quot;no_maj_re&quot;,NA,NA,10702,NA
+## &quot;580&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.00853242320819113,85987,2.62
+## &quot;581&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.101787668734039,40039,2.47
+## &quot;582&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0368070953436807,46843,2.13
+## &quot;583&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.025170801869831,65816,2.57
+## &quot;584&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0669796557120501,46609,2.44
+## &quot;585&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0218360071301248,64333,2.54
+## &quot;586&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0879032258064516,62853,2.34
+## &quot;587&quot;,&quot;Marin&quot;,&quot;no_maj_re&quot;,TRUE,0.147008547008547,25164,2.51
+## &quot;588&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.14721919302072,35238,1.95
+## &quot;589&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0687022900763359,106875,2.29
+## &quot;590&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0526745610453246,47902,2.79
+## &quot;591&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,TRUE,0.0666666666666667,41701,1.95
+## &quot;592&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0190839694656489,51726,2.42
+## &quot;593&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0355329949238579,71571,2.31
+## &quot;594&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,TRUE,0.0331491712707182,53218,2.07
+## &quot;595&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.017725258493353,93565,2.3
+## &quot;596&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0313765182186235,56656,2.37
+## &quot;597&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,TRUE,0.0509193776520509,50872,1.84
+## &quot;598&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0351894818252127,55170,2.47
+## &quot;599&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0279021701687909,55942,2.66
+## &quot;600&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.161324786324786,45789,2.26
+## &quot;601&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0212164073550212,76493,2.33
+## &quot;602&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0621096460791117,78674,2.29
+## &quot;603&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0534918276374443,51429,2.42
+## &quot;604&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0561946902654867,50924,2.31
+## &quot;605&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0539291217257319,74792,2.59
+## &quot;606&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.10327868852459,42131,2.61
+## &quot;607&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.147017045454545,45833,2.17
+## &quot;608&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0348133198789102,57234,2.2
+## &quot;609&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.061763655837201,58836,2.24
+## &quot;610&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0881773399014778,64240,2.1
+## &quot;611&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0375586854460094,77875,2.59
+## &quot;612&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.141673570836785,37750,2.29
+## &quot;613&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.138792505204719,41986,2.41
+## &quot;614&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0600172711571675,48406,2.66
+## &quot;615&quot;,&quot;Marin&quot;,&quot;no_maj_re&quot;,TRUE,0.127708621484555,29487,2.62
+## &quot;616&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,TRUE,0.0383973288814691,50530,2.37
+## &quot;617&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0433542498573873,64402,2.25
+## &quot;618&quot;,&quot;Marin&quot;,&quot;hisp_latino&quot;,TRUE,0.306674020959735,18882,4.47
+## &quot;619&quot;,&quot;Marin&quot;,&quot;hisp_latino&quot;,TRUE,0.102987421383648,27149,3.87
+## &quot;620&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,TRUE,0.0728831725616292,48867,1.78
+## &quot;621&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0489396411092985,74635,2.82
+## &quot;622&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0315955766192733,85625,1.76
+## &quot;623&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0395480225988701,67697,1.76
+## &quot;624&quot;,&quot;Marin&quot;,&quot;nh_white&quot;,FALSE,0.0510948905109489,38056,2.41
+## &quot;625&quot;,&quot;Marin&quot;,&quot;no_maj_re&quot;,NA,NA,NA,NA
+## &quot;626&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,TRUE,0.171480144404332,30469,2.3
+## &quot;627&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0574193548387097,36140,2.66
+## &quot;628&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,TRUE,0.162162162162162,3170,1.38
+## &quot;629&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0956775133559981,38155,2.37
+## &quot;630&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0710315009264978,30198,2.68
+## &quot;631&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0509554140127389,56950,2.58
+## &quot;632&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,TRUE,0.060965283657917,42310,2.5
+## &quot;633&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,TRUE,0.124324324324324,35993,2.63
+## &quot;634&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.159722222222222,32301,2.4
+## &quot;635&quot;,&quot;Napa&quot;,&quot;no_maj_re&quot;,TRUE,0.119668246445498,31683,2.77
+## &quot;636&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0802919708029197,50242,2.15
+## &quot;637&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.114247311827957,50346,2.62
+## &quot;638&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.122958693563881,35332,2.5
+## &quot;639&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.119883040935673,30618,1.78
+## &quot;640&quot;,&quot;Napa&quot;,&quot;hisp_latino&quot;,TRUE,0.179611650485437,27073,3.17
+## &quot;641&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,TRUE,0.142649199417758,27173,2.43
+## &quot;642&quot;,&quot;Napa&quot;,&quot;hisp_latino&quot;,FALSE,0.165989553105049,28279,3.14
+## &quot;643&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0806451612903226,41516,2.98
+## &quot;644&quot;,&quot;Napa&quot;,&quot;no_maj_re&quot;,FALSE,0.10099573257468,33452,2.95
+## &quot;645&quot;,&quot;Napa&quot;,&quot;no_maj_re&quot;,TRUE,0.0934873949579832,35721,2.77
+## &quot;646&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0827586206896552,30656,3.39
+## &quot;647&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0972300734878462,35332,2.35
+## &quot;648&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.118531889290012,29641,3.01
+## &quot;649&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.12291052114061,32000,2.91
+## &quot;650&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0665483584738243,45298,2.8
+## &quot;651&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0966767371601208,41995,2.39
+## &quot;652&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.101635514018692,50069,2.45
+## &quot;653&quot;,&quot;Napa&quot;,&quot;hisp_latino&quot;,FALSE,0.130272952853598,28470,3.47
+## &quot;654&quot;,&quot;Napa&quot;,&quot;no_maj_re&quot;,FALSE,0.100642398286938,36507,3.83
+## &quot;655&quot;,&quot;Napa&quot;,&quot;no_maj_re&quot;,FALSE,0.0858416945373467,34075,3.31
+## &quot;656&quot;,&quot;Napa&quot;,&quot;no_maj_re&quot;,FALSE,0.102006688963211,33081,3.99
+## &quot;657&quot;,&quot;Napa&quot;,&quot;no_maj_re&quot;,FALSE,0.108474576271186,31519,3.6
+## &quot;658&quot;,&quot;Napa&quot;,&quot;no_maj_re&quot;,FALSE,0.0538243626062323,32259,4.06
+## &quot;659&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0300751879699248,58688,2.65
+## &quot;660&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.135021097046413,41810,2.43
+## &quot;661&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0553227158424141,46101,2.64
+## &quot;662&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0398009950248756,54980,2.51
+## &quot;663&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.193548387096774,41818,2.44
+## &quot;664&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,TRUE,0.0882629107981221,37333,2.52
+## &quot;665&quot;,&quot;Napa&quot;,&quot;nh_white&quot;,FALSE,0.0807817589576547,40753,2.16
+## &quot;666&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.15448275862069,53087,2.36
+## &quot;667&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0476190476190476,83379,1.69
+## &quot;668&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.123276561232766,69167,1.97
+## &quot;669&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.117937853107345,50216,2.71
+## &quot;670&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.115567054764985,56788,2.38
+## &quot;671&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.0227518959913326,89545,2.7
+## &quot;672&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.192148760330579,26223,3.78
+## &quot;673&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.11145648312611,68550,2.25
+## &quot;674&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.0570044709388972,63647,2.62
+## &quot;675&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0605954465849387,49170,3.17
+## &quot;676&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.041025641025641,93579,1.92
+## &quot;677&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.0758196721311475,31846,3.26
+## &quot;678&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.0831960461285008,30011,4.23
+## &quot;679&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.0912265386294195,65182,2.44
+## &quot;680&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.0697980684811238,63962,2.83
+## &quot;681&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.075134168157424,55625,2.93
+## &quot;682&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0846759085799925,45161,2.8
+## &quot;683&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.157393483709273,27368,3.75
+## &quot;684&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.0680529300567108,86029,2.05
+## &quot;685&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.00768245838668374,73710,3.11
+## &quot;686&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.16897233201581,41753,2.21
+## &quot;687&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.101851851851852,48788,2.56
+## &quot;688&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.20160481444333,17141,3.5
+## &quot;689&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0754684838160136,79721,2.01
+## &quot;690&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0778364116094987,48466,2.49
+## &quot;691&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.258847320525784,47014,1.56
+## &quot;692&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0918727915194346,82859,1.77
+## &quot;693&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,TRUE,0.296598639455782,17283,1.99
+## &quot;694&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0496323529411765,48796,1.57
+## &quot;695&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.081917211328976,101869,1.93
+## &quot;696&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.341652323580034,45625,1.5
+## &quot;697&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.255896226415094,14975,2.01
+## &quot;698&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0701927829955512,75305,2.26
+## &quot;699&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.234780959605538,29849,1.73
+## &quot;700&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.287700211544273,31282,1.77
+## &quot;701&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0588020452885318,91921,1.9
+## &quot;702&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.139904610492846,51225,2.47
+## &quot;703&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.0535331905781585,86906,2.3
+## &quot;704&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0169218372280419,96750,2.13
+## &quot;705&quot;,&quot;San Francisco&quot;,&quot;nh_black&quot;,TRUE,0.272324255858138,20577,2.87
+## &quot;706&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.039939713639789,64850,2.66
+## &quot;707&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.0690582959641256,99779,1.91
+## &quot;708&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.00853374709076804,59792,1.75
+## &quot;709&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.00689375506893755,91594,2.17
+## &quot;710&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0651898734177215,42080,3.21
+## &quot;711&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.111269614835949,27877,4.06
+## &quot;712&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.0569196428571429,74408,2.8
+## &quot;713&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.063504208110176,65417,2.69
+## &quot;714&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0645161290322581,4371,2.94
+## &quot;715&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.161577608142494,63757,1.52
+## &quot;716&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.2747791952895,34474,1.66
+## &quot;717&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0443280977312391,81658,2.08
+## &quot;718&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.100909842845327,71111,1.83
+## &quot;719&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.125,37013,3.49
+## &quot;720&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.101889338731444,31093,3.64
+## &quot;721&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0636215334420881,34714,3.26
+## &quot;722&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.0741671904462602,26451,3.78
+## &quot;723&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0775451950523311,50971,2.52
+## &quot;724&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0649087221095335,50590,2.33
+## &quot;725&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.130981150314161,30997,3.63
+## &quot;726&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0854545454545454,26847,3.14
+## &quot;727&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0203408466190214,58657,2.59
+## &quot;728&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0589949016751639,51314,2.7
+## &quot;729&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.158896289248335,36184,2.47
+## &quot;730&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.14378612716763,27055,3.77
+## &quot;731&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0781041388518024,30422,3.52
+## &quot;732&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0597609561752988,31425,4.09
+## &quot;733&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.041101520756268,51884,2.83
+## &quot;734&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.0905077262693157,69120,2.38
+## &quot;735&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0911764705882353,26118,2.63
+## &quot;736&quot;,&quot;San Francisco&quot;,&quot;hisp_latino&quot;,TRUE,0.0808015513897867,32466,3.33
+## &quot;737&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.127023661270237,34769,3.17
+## &quot;738&quot;,&quot;San Francisco&quot;,&quot;hisp_latino&quot;,TRUE,0.0877659574468085,44295,3.16
+## &quot;739&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.0463258785942492,31951,3.06
+## &quot;740&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.141975308641975,26728,3.45
+## &quot;741&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0354251012145749,56026,2.29
+## &quot;742&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0683188211654387,57514,2.89
+## &quot;743&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.0546835443037975,63173,2.86
+## &quot;744&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0969543147208122,72730,2.15
+## &quot;745&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.128954745694834,72917,1.92
+## &quot;746&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.106072252113759,38087,3.85
+## &quot;747&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0431829209121786,56494,2.33
+## &quot;748&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.101628895184136,42670,2.95
+## &quot;749&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.0973011363636364,39758,3.57
+## &quot;750&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.151545363908275,26095,3.51
+## &quot;751&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0381861575178998,75913,2.12
+## &quot;752&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.169840652934318,41747,2.83
+## &quot;753&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0731497418244406,52720,2.41
+## &quot;754&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,TRUE,0.29827490261547,35370,1.87
+## &quot;755&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.115851415961751,52719,2.29
+## &quot;756&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0473744292237443,43526,2.76
+## &quot;757&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0596590909090909,86429,1.93
+## &quot;758&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.121236451224408,98454,2.01
+## &quot;759&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0540540540540541,98430,2.23
+## &quot;760&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.0289057123193393,90938,2.12
+## &quot;761&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.0144,97059,2.12
+## &quot;762&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,TRUE,0.374949819349659,14601,2.22
+## &quot;763&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0667367314766159,73380,1.75
+## &quot;764&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0247831474597274,70147,1.96
+## &quot;765&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.0349301397205589,64022,2.69
+## &quot;766&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.20281416787967,39228,1.87
+## &quot;767&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.128125,74047,1.8
+## &quot;768&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0352467270896274,89702,1.93
+## &quot;769&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.122991347342398,67923,1.58
+## &quot;770&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0653846153846154,34854,2.28
+## &quot;771&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0437430786267996,79175,2.21
+## &quot;772&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0296080066722269,63286,2.3
+## &quot;773&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0974789915966387,18367,3.17
+## &quot;774&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0355504587155963,83995,2.17
+## &quot;775&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.166264090177134,35802,1.56
+## &quot;776&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0296229802513465,88553,1.81
+## &quot;777&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0209949794614331,120801,1.94
+## &quot;778&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0916919959473151,79094,2.28
+## &quot;779&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0858064516129032,101771,1.7
+## &quot;780&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0207684319833853,71875,2.14
+## &quot;781&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.01995841995842,84836,2.13
+## &quot;782&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.102768055997455,53634,1.95
+## &quot;783&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.025035765379113,82542,2.09
+## &quot;784&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0383211678832117,75278,2.05
+## &quot;785&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.160796324655436,27849,3.87
+## &quot;786&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0882978723404255,40308,2.62
+## &quot;787&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.180057684384013,35625,2.22
+## &quot;788&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.018058690744921,64776,3.1
+## &quot;789&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.119125683060109,25346,3.62
+## &quot;790&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.0647275706677591,40426,2.73
+## &quot;791&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.136363636363636,50508,2.27
+## &quot;792&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.202127659574468,25421,3.37
+## &quot;793&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0652730375426621,68726,2.03
+## &quot;794&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0996916752312436,41848,3.08
+## &quot;795&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.114207221350078,43569,2.79
+## &quot;796&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.126618705035971,35833,2.14
+## &quot;797&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.1671388101983,52107,1.61
+## &quot;798&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0926033779848573,86181,1.71
+## &quot;799&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,TRUE,0.353816300129366,18504,1.95
+## &quot;800&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.166244725738397,69309,1.78
+## &quot;801&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.054089709762533,50347,2.57
+## &quot;802&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0207509881422925,102014,2.24
+## &quot;803&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.078523140925637,43734,2.94
+## &quot;804&quot;,&quot;San Francisco&quot;,&quot;nh_black&quot;,TRUE,0.244747899159664,19816,2.79
+## &quot;805&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.173559322033898,36715,3.21
+## &quot;806&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.169285714285714,29509,3.57
+## &quot;807&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0208860759493671,106414,1.81
+## &quot;808&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.060625814863103,54608,1.56
+## &quot;809&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0989702517162471,60188,1.61
+## &quot;810&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.190831159150205,39765,1.73
+## &quot;811&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.27161250766401,22500,1.84
+## &quot;812&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.424979724249797,17130,1.72
+## &quot;813&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.194029850746269,42500,1.35
+## &quot;814&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.360858493997817,22690,1.68
+## &quot;815&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.17896329928112,43162,1.51
+## &quot;816&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.332890659583887,20431,1.71
+## &quot;817&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.490942028985507,13645,1.49
+## &quot;818&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0625,105616,1.68
+## &quot;819&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0595238095238095,101486,1.78
+## &quot;820&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0474598930481283,95266,1.77
+## &quot;821&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0680602819640253,79756,1.92
+## &quot;822&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.02203182374541,100466,1.65
+## &quot;823&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0541611624834875,92009,1.92
+## &quot;824&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.157777777777778,52455,2.27
+## &quot;825&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0926860025220681,72660,2.05
+## &quot;826&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0551532033426184,70998,2.09
+## &quot;827&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.078125,73682,1.77
+## &quot;828&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0388235294117647,89122,2.22
+## &quot;829&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.0307599517490953,80740,2.29
+## &quot;830&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,TRUE,0.441607367099205,14806,1.53
+## &quot;831&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.132544378698225,36865,2.1
+## &quot;832&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.0427672955974843,88750,2.05
+## &quot;833&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.03687374749499,71528,1.87
+## &quot;834&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0.0233766233766234,96314,2.14
+## &quot;835&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.051440329218107,30747,3.62
+## &quot;836&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.0867865519937451,33507,3.5
+## &quot;837&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.108974358974359,23800,3.49
+## &quot;838&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0873130728412928,27002,3.43
+## &quot;839&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0341034103410341,30775,3.87
+## &quot;840&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.108519269776876,33529,3.14
+## &quot;841&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.068019747668678,48060,2.96
+## &quot;842&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,TRUE,0.117226197028068,48459,2.67
+## &quot;843&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0946221919673247,42159,2.9
+## &quot;844&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.110185778347213,43690,2.79
+## &quot;845&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.072066706372841,20771,2.86
+## &quot;846&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.105747126436782,43887,3.3
+## &quot;847&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,FALSE,0.0937052932761087,38537,3
+## &quot;848&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0987096774193548,30625,2.45
+## &quot;849&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.110091743119266,48285,2.19
+## &quot;850&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0.13135593220339,68219,2.13
+## &quot;851&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,TRUE,0.118367346938776,50276,2.62
+## &quot;852&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0887949260042283,49268,2.65
+## &quot;853&quot;,&quot;San Francisco&quot;,&quot;nh_asian&quot;,TRUE,0.540737148399612,12119,2.28
+## &quot;854&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.208299430431245,24254,3.4
+## &quot;855&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.0507735025783419,62580,2.37
+## &quot;856&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,FALSE,0,26167,1.86
+## &quot;857&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0,82031,1.35
+## &quot;858&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,NA,NA,NA,NA
+## &quot;859&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,TRUE,0.532520325203252,12035,2.72
+## &quot;860&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,FALSE,0.151111111111111,32955,2.56
+## &quot;861&quot;,&quot;San Francisco&quot;,&quot;nh_white&quot;,TRUE,0,63750,1.77
+## &quot;862&quot;,&quot;San Francisco&quot;,&quot;no_maj_re&quot;,NA,NA,NA,NA
+## &quot;863&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,TRUE,0.0832432432432432,48670,2.37
+## &quot;864&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0654911838790932,104505,2.77
+## &quot;865&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0972139893301719,48707,2.75
+## &quot;866&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,TRUE,0.103903903903904,31278,3
+## &quot;867&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,TRUE,0.131095123900879,30133,2.81
+## &quot;868&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,FALSE,0.124858115777526,24887,4.91
+## &quot;869&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,TRUE,0.0432715168806467,66883,2.17
+## &quot;870&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0597719229256783,86927,2.68
+## &quot;871&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0273609885260371,77381,2.77
+## &quot;872&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0473087818696884,42231,2.55
+## &quot;873&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.00816629547141797,80765,2.74
+## &quot;874&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0627615062761506,81136,3.04
+## &quot;875&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0250312891113892,93750,2.8
+## &quot;876&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0528683914510686,74135,2.68
+## &quot;877&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.032355915065723,84545,3.06
+## &quot;878&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.129770992366412,45963,2.86
+## &quot;879&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0472531694199001,62338,2.59
+## &quot;880&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0485201358563804,72633,2.55
+## &quot;881&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,FALSE,0.167872097449562,30036,3.9
+## &quot;882&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0,96806,3.35
+## &quot;883&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0577478344562079,40720,3.41
+## &quot;884&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,TRUE,0.147048170952553,30672,2.68
+## &quot;885&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0808174640037157,35486,3.23
+## &quot;886&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.0862385321100917,43956,3.01
+## &quot;887&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0605069501226492,58295,2.84
+## &quot;888&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.126996197718631,50327,2.93
+## &quot;889&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.0588510042036432,39250,2.46
+## &quot;890&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0692464358452139,72708,2.57
+## &quot;891&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0227920227920228,74194,2.52
+## &quot;892&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0569105691056911,79492,2.85
+## &quot;893&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.0388252862120458,65839,2.67
+## &quot;894&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0725663716814159,52400,2.98
+## &quot;895&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0586924219910847,59970,2.75
+## &quot;896&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.031144211238998,79120,2.44
+## &quot;897&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0373900293255132,74402,2.81
+## &quot;898&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.127028539451595,64347,2.43
+## &quot;899&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0772486772486772,52404,2.65
+## &quot;900&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0612052730696798,64250,2.83
+## &quot;901&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.126099706744868,33494,2.85
+## &quot;902&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0438124519600307,65767,2.91
+## &quot;903&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,FALSE,0.226229508196721,23428,4.62
+## &quot;904&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0473001255755546,52823,2.75
+## &quot;905&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0822959889349931,44384,2.6
+## &quot;906&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.0712933753943218,42726,3.3
+## &quot;907&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0842490842490843,43717,2.99
+## &quot;908&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.0108303249097473,36372,3.78
+## &quot;909&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0635002581311306,46742,3.2
+## &quot;910&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0525982256020279,54673,2.43
+## &quot;911&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0979253112033195,31595,3.4
+## &quot;912&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0965853658536585,41461,3.28
+## &quot;913&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0136690647482014,85357,2.63
+## &quot;914&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.00573248407643312,82643,2.53
+## &quot;915&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0610119047619048,75685,2.65
+## &quot;916&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,TRUE,0.0570304818092429,62780,2.38
+## &quot;917&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,FALSE,0.163018867924528,27334,3.64
+## &quot;918&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,TRUE,0.222492401215805,24352,3.67
+## &quot;919&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0408695652173913,57256,2.87
+## &quot;920&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0553435114503817,65759,2.68
+## &quot;921&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0414378432351473,54682,2.67
+## &quot;922&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,TRUE,0.194945848375451,29471,3.12
+## &quot;923&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0983606557377049,30395,3.85
+## &quot;924&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.136568848758465,31946,3.17
+## &quot;925&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0666666666666667,47832,2.79
+## &quot;926&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.107731305449937,58981,1.85
+## &quot;927&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.0853242320819113,54522,2.56
+## &quot;928&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.059482155353394,60378,2.82
+## &quot;929&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,TRUE,0.0625,60580,2.39
+## &quot;930&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0343725019984013,68617,2.9
+## &quot;931&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,TRUE,0.180717488789238,24507,3.54
+## &quot;932&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0714285714285714,105938,2.78
+## &quot;933&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.10748959778086,67986,2.55
+## &quot;934&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,TRUE,0.188210961737332,27393,3.39
+## &quot;935&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0204081632653061,70766,2.75
+## &quot;936&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.103421461897356,53424,2.91
+## &quot;937&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.106360235168359,39611,3.04
+## &quot;938&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0617164898746384,52672,2.79
+## &quot;939&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,TRUE,0.158065826899634,27951,3.27
+## &quot;940&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0951957295373665,35260,3.95
+## &quot;941&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.101666666666667,48065,2.78
+## &quot;942&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0847457627118644,57813,2.83
+## &quot;943&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.139968068121341,54512,2.67
+## &quot;944&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,TRUE,0.0605326876513317,64239,2.34
+## &quot;945&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.0670611439842209,52805,2.08
+## &quot;946&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.12683284457478,34697,3.66
+## &quot;947&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0311070448307411,106131,3
+## &quot;948&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.049346016646849,98287,2.92
+## &quot;949&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0435308343409915,84384,2.81
+## &quot;950&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0283657917019475,77188,2.83
+## &quot;951&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,TRUE,0.179846046186144,26381,3.78
+## &quot;952&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0657342657342657,70698,2.78
+## &quot;953&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.0683918669131238,42391,3.91
+## &quot;954&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0654545454545455,43381,2.45
+## &quot;955&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.0842929525564256,32111,3.26
+## &quot;956&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0372588157019295,41955,3.23
+## &quot;957&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,TRUE,0.169634489222118,25058,3.79
+## &quot;958&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.0225933202357564,40581,3.43
+## &quot;959&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.103653355989805,53182,3.05
+## &quot;960&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0880893300248139,36429,3.66
+## &quot;961&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.120805369127517,42500,2.41
+## &quot;962&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,TRUE,0.038940312799234,73918,2.65
+## &quot;963&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.047085201793722,63793,2.94
+## &quot;964&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0259285213735109,73180,2.76
+## &quot;965&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.037037037037037,68154,2.37
+## &quot;966&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.13955773955774,54351,2.54
+## &quot;967&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.119346049046322,41348,3.38
+## &quot;968&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.148236226714229,29133,3.37
+## &quot;969&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.0550879877582249,34424,4.23
+## &quot;970&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0846681922196796,45357,3.17
+## &quot;971&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0839536807278743,33462,3.48
+## &quot;972&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.149814126394052,40148,2.8
+## &quot;973&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0722992854140395,50754,2.69
+## &quot;974&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0770877944325482,54810,3.06
+## &quot;975&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,TRUE,0.0976456966422231,59045,2.13
+## &quot;976&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.041041041041041,95469,2.65
+## &quot;977&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.0537688442211055,43288,2.42
+## &quot;978&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0704819277108434,65833,1.88
+## &quot;979&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.0236818588025022,46670,2.82
+## &quot;980&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0618556701030928,60641,2.81
+## &quot;981&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0262453133369041,74028,2.46
+## &quot;982&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0328042328042328,97113,3.13
+## &quot;983&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,TRUE,0.0817420435510888,63826,2.31
+## &quot;984&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,TRUE,0.104304635761589,68040,2.06
+## &quot;985&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0217560217560218,79034,2.66
+## &quot;986&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0289179104477612,87333,2.94
+## &quot;987&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.101398601398601,51932,2.76
+## &quot;988&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.120517928286853,43724,2.62
+## &quot;989&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,TRUE,0.0577259475218659,30664,3.53
+## &quot;990&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0206521739130435,106389,3.12
+## &quot;991&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,TRUE,0.0191885964912281,87554,2.43
+## &quot;992&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0747164776517679,36394,3.3
+## &quot;993&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,TRUE,0.172200337647721,26098,3.29
+## &quot;994&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.0785219399538106,49474,1.93
+## &quot;995&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.016872551973486,106159,2.45
+## &quot;996&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0325680726107848,83696,2.35
+## &quot;997&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.124417520969245,41949,2.77
+## &quot;998&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0452830188679245,84792,2.99
+## &quot;999&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.177777777777778,28848,3.57
+## &quot;1000&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.0817610062893082,43516,3.11
+## &quot;1001&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.136446056210335,27218,3.41
+## &quot;1002&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,TRUE,0.173646007816862,27400,2.94
+## &quot;1003&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,TRUE,0.146448523543496,29458,3.47
+## &quot;1004&quot;,&quot;San Mateo&quot;,&quot;hisp_latino&quot;,FALSE,0.0721830985915493,32074,3.54
+## &quot;1005&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0896755162241888,45529,3.07
+## &quot;1006&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.0721599219892735,54372,2.69
+## &quot;1007&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.00901916572717024,94487,3.12
+## &quot;1008&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.171171171171171,45989,2.24
+## &quot;1009&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.134862385321101,35848,3.04
+## &quot;1010&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.0789889415481833,30425,3.96
+## &quot;1011&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.125813449023861,39570,3.02
+## &quot;1012&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,TRUE,0.116791744840525,36834,2.56
+## &quot;1013&quot;,&quot;San Mateo&quot;,&quot;nh_asian&quot;,FALSE,0.0534943917169974,51797,2
+## &quot;1014&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.0685527747551687,53101,2.67
+## &quot;1015&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.144871794871795,77750,2.35
+## &quot;1016&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,TRUE,0.0792588780236747,57375,2.29
+## &quot;1017&quot;,&quot;San Mateo&quot;,&quot;nh_white&quot;,FALSE,0.102647468648398,68782,2.9
+## &quot;1018&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,FALSE,0.060315670800451,47399,3.32
+## &quot;1019&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,NA,NA,NA,NA
+## &quot;1020&quot;,&quot;San Mateo&quot;,&quot;no_maj_re&quot;,NA,NA,NA,NA
+## &quot;1021&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0269448066058236,105010,3
+## &quot;1022&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0896403650026838,55883,2.6
+## &quot;1023&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0142146410803127,63171,2.5
+## &quot;1024&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.103850641773629,75991,2.24
+## &quot;1025&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0447227191413238,67464,2.47
+## &quot;1026&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0614638091386979,52792,2.83
+## &quot;1027&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.0985979194934419,22583,3.79
+## &quot;1028&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0895372233400402,25804,4.41
+## &quot;1029&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.154091392136026,23561,5.15
+## &quot;1030&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.102702702702703,24531,6.63
+## &quot;1031&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0869001297016861,43053,3.28
+## &quot;1032&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0140405616224649,40287,2.99
+## &quot;1033&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0865551067512983,45655,2.89
+## &quot;1034&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.168230563002681,39354,3.31
+## &quot;1035&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0612244897959184,33670,3.68
+## &quot;1036&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.111946532999165,20225,4.69
+## &quot;1037&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.0946051602814699,24726,5.26
+## &quot;1038&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.0483271375464684,22087,4.92
+## &quot;1039&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.160987074030552,26635,3.59
+## &quot;1040&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.0274348422496571,32093,4.2
+## &quot;1041&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.305780659103187,14805,3.34
+## &quot;1042&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.0877598152424942,30297,4.37
+## &quot;1043&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.125823451910408,42467,2.85
+## &quot;1044&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0386343216531896,52101,3.4
+## &quot;1045&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.119617224880383,36521,3.64
+## &quot;1046&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.0788590604026846,39955,3.77
+## &quot;1047&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.13871635610766,53424,2.06
+## &quot;1048&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.122740647330811,37055,2.71
+## &quot;1049&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0148216767021769,44053,3.35
+## &quot;1050&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.163829787234043,46719,3.13
+## &quot;1051&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.100833965125095,32419,3.47
+## &quot;1052&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.124552327894946,37418,3.19
+## &quot;1053&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.146653543307087,46250,2.49
+## &quot;1054&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0396710208030963,54549,2.51
+## &quot;1055&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.102616516762061,26693,3.03
+## &quot;1056&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0950226244343891,40399,2.98
+## &quot;1057&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.121338912133891,67500,1.97
+## &quot;1058&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.151582454192115,25280,3.28
+## &quot;1059&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0239030779305828,63795,2.55
+## &quot;1060&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0521069324875396,53516,2.73
+## &quot;1061&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0375402216660708,61118,2.84
+## &quot;1062&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0702045328911001,39868,3.56
+## &quot;1063&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0679347826086956,31974,2.79
+## &quot;1064&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0343422584400466,41333,3.1
+## &quot;1065&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0284794452699356,87963,2.56
+## &quot;1066&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0216368767638758,44922,3.05
+## &quot;1067&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0672624647224835,42556,2.78
+## &quot;1068&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0956015994183933,40072,2.24
+## &quot;1069&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0453857791225416,37041,3.9
+## &quot;1070&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0463960231980116,40336,3.97
+## &quot;1071&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.115823817292007,29269,3.92
+## &quot;1072&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0287713841368585,31956,3.84
+## &quot;1073&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0263355906696764,94500,2.64
+## &quot;1074&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.118044721788872,48700,2.64
+## &quot;1075&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0577950461389024,69943,2.51
+## &quot;1076&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.029467680608365,40982,3.13
+## &quot;1077&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0237837837837838,90547,2.88
+## &quot;1078&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0992407809110629,31119,3.11
+## &quot;1079&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0806845965770171,45326,2.92
+## &quot;1080&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0132969655642687,53588,2.98
+## &quot;1081&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.114122681883024,42500,3.44
+## &quot;1082&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0,105843,2.84
+## &quot;1083&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.0182712579058327,82860,2.18
+## &quot;1084&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0311614730878187,88958,2.72
+## &quot;1085&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0223135642982971,102000,2.52
+## &quot;1086&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0579207920792079,50534,2.66
+## &quot;1087&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0792929292929293,39167,2.77
+## &quot;1088&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0648907103825137,55085,3.03
+## &quot;1089&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.120345744680851,42140,2.83
+## &quot;1090&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0759587020648968,52306,2.94
+## &quot;1091&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0698305084745763,90308,2.64
+## &quot;1092&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0267459138187221,78872,3.23
+## &quot;1093&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.071228266965788,50978,2.68
+## &quot;1094&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0263157894736842,101065,2.8
+## &quot;1095&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0442678774120318,73625,2.8
+## &quot;1096&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0810556079170594,71203,3.01
+## &quot;1097&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0322456813819578,61525,3.25
+## &quot;1098&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0698466780238501,32411,3.9
+## &quot;1099&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.0812917594654788,31385,4.7
+## &quot;1100&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0183231538034425,59491,4.06
+## &quot;1101&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.171428571428571,57188,2.66
+## &quot;1102&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0253648366921473,53506,2.3
+## &quot;1103&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0497630331753555,43692,3.45
+## &quot;1104&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0489199491740788,52500,2.68
+## &quot;1105&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0434990439770555,65795,2.94
+## &quot;1106&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.00617030028794735,89418,2.77
+## &quot;1107&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0287945339189849,64020,2.82
+## &quot;1108&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0467359050445104,51475,2.76
+## &quot;1109&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0273584905660377,62457,2.71
+## &quot;1110&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0413306451612903,68370,2.86
+## &quot;1111&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.048014440433213,60218,2.81
+## &quot;1112&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0646008403361345,58536,2.44
+## &quot;1113&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0335140463282405,108385,2.46
+## &quot;1114&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0687885010266941,53989,2.48
+## &quot;1115&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0844951415293621,53582,2.37
+## &quot;1116&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0268096514745308,74303,2.65
+## &quot;1117&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0821782178217822,76433,2.55
+## &quot;1118&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0400943396226415,65838,2.44
+## &quot;1119&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.142555438225977,24671,4.57
+## &quot;1120&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.111695137976347,26163,3.73
+## &quot;1121&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.105527638190955,26034,4.76
+## &quot;1122&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.139475908706678,72679,2.26
+## &quot;1123&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0217898832684825,45278,2.95
+## &quot;1124&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.0674157303370786,30616,5.26
+## &quot;1125&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0423645320197044,29358,4.33
+## &quot;1126&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.104060913705584,63111,2.62
+## &quot;1127&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0074318744838976,115104,2.12
+## &quot;1128&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0790759662372279,34985,3.18
+## &quot;1129&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0624249699879952,58102,2.94
+## &quot;1130&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.11138014527845,56806,2.79
+## &quot;1131&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0852248394004283,41330,2.39
+## &quot;1132&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0460413080895009,46646,2.88
+## &quot;1133&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0754189944134078,50778,2.45
+## &quot;1134&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0845070422535211,24177,3.79
+## &quot;1135&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0517129928894635,45694,2.9
+## &quot;1136&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0439356435643564,60417,2.51
+## &quot;1137&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0829664747714189,48487,2.75
+## &quot;1138&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0303408146300914,50229,3.23
+## &quot;1139&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0301353013530135,59048,3.4
+## &quot;1140&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0355361596009975,52857,3.59
+## &quot;1141&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0301672640382318,52649,2.8
+## &quot;1142&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0677903994137047,80243,2.87
+## &quot;1143&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.0610526315789474,67195,2.26
+## &quot;1144&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0406905055487053,58555,2.67
+## &quot;1145&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0834394904458599,38299,2.99
+## &quot;1146&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0469798657718121,82772,3.24
+## &quot;1147&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0,92321,2.92
+## &quot;1148&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0685748360166965,79643,2.55
+## &quot;1149&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0310825294748124,91215,2.46
+## &quot;1150&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.071955071955072,80667,2.57
+## &quot;1151&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0823084200567644,34625,2.9
+## &quot;1152&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0318007662835249,64355,2.64
+## &quot;1153&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.104702194357367,52466,2.29
+## &quot;1154&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0637647957235586,56188,2.98
+## &quot;1155&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.0517503805175038,62853,2.4
+## &quot;1156&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.044839255499154,63042,2.49
+## &quot;1157&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0599230346344145,69338,2.59
+## &quot;1158&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0431328036322361,87500,2.72
+## &quot;1159&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0484210526315789,63327,2.83
+## &quot;1160&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0638870208473436,52259,2.84
+## &quot;1161&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0744458385612714,76117,2.92
+## &quot;1162&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0593169562612343,61028,2.61
+## &quot;1163&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.0460526315789474,80281,2.27
+## &quot;1164&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0265356265356265,63717,3.41
+## &quot;1165&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.053019145802651,75302,2.81
+## &quot;1166&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0225770925110132,93631,3.07
+## &quot;1167&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0,93750,2.88
+## &quot;1168&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.269557021677663,23969,2.17
+## &quot;1169&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.159090909090909,25752,3.9
+## &quot;1170&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0222222222222222,49768,3.27
+## &quot;1171&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.089527027027027,55974,3.04
+## &quot;1172&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.029826464208243,55543,3.01
+## &quot;1173&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0379098360655738,31355,4.44
+## &quot;1174&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.132601351351351,22031,4.14
+## &quot;1175&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0704095720202485,53134,2.41
+## &quot;1176&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0357142857142857,89519,2.7
+## &quot;1177&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0482855143456963,105827,3.19
+## &quot;1178&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0532623169107856,69160,2.7
+## &quot;1179&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0384866275277234,60526,2.81
+## &quot;1180&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0404709345106696,76949,3.06
+## &quot;1181&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0156608097784568,98490,2.97
+## &quot;1182&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0260115606936416,50155,3.13
+## &quot;1183&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0272108843537415,42375,3.04
+## &quot;1184&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.051038062283737,32851,3.63
+## &quot;1185&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0402588066139468,27398,3.43
+## &quot;1186&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0755580995993131,34885,3.17
+## &quot;1187&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0357142857142857,43662,3.06
+## &quot;1188&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.050058207217695,59560,2.88
+## &quot;1189&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.123796423658872,53611,2.65
+## &quot;1190&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.087719298245614,41838,3.11
+## &quot;1191&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.056544502617801,27113,3.99
+## &quot;1192&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.100965759438104,45424,2.84
+## &quot;1193&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.04757233938205,55000,2.87
+## &quot;1194&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.171663244353183,31521,2.73
+## &quot;1195&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0723049956178791,46796,2.57
+## &quot;1196&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.0755487493619193,27156,3.71
+## &quot;1197&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.109962406015038,49125,3.02
+## &quot;1198&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.011986301369863,79671,3.16
+## &quot;1199&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0136103151862464,51590,3.1
+## &quot;1200&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0383419689119171,68185,3.02
+## &quot;1201&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0309233449477352,50307,2.88
+## &quot;1202&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.00705645161290323,54211,3.27
+## &quot;1203&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.00796812749003984,62932,3.02
+## &quot;1204&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0332272887946271,57491,3.34
+## &quot;1205&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.139977177634081,28432,3.03
+## &quot;1206&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0372340425531915,50282,2.5
+## &quot;1207&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.07274490785645,56028,2.01
+## &quot;1208&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.0511415525114155,19776,2.7
+## &quot;1209&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.133093525179856,48685,2.57
+## &quot;1210&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.176070700203943,28966,2.76
+## &quot;1211&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.102005231037489,36828,2.56
+## &quot;1212&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0339943342776204,29286,3.93
+## &quot;1213&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.0749542961608775,31376,4.36
+## &quot;1214&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0751211631663974,38626,3.88
+## &quot;1215&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0275938189845475,35957,3.96
+## &quot;1216&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0541455160744501,40843,3.85
+## &quot;1217&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.179372197309417,26164,4.06
+## &quot;1218&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0502450980392157,50544,3.06
+## &quot;1219&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0550621669626998,29246,3.4
+## &quot;1220&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0352941176470588,31366,3.79
+## &quot;1221&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0712758374910905,32320,3.69
+## &quot;1222&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.104140526976161,33676,3.88
+## &quot;1223&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.128436232537179,50028,2.32
+## &quot;1224&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.135812787296281,30491,2.93
+## &quot;1225&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0230292294065545,34267,4.27
+## &quot;1226&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.107327905255366,31455,3.4
+## &quot;1227&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.141421392677674,30694,4.23
+## &quot;1228&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.179093005380477,33681,3.18
+## &quot;1229&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.254872563718141,26568,3.7
+## &quot;1230&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0393986521513738,64384,2.93
+## &quot;1231&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0593180756655768,74661,2.29
+## &quot;1232&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0533164074896858,71669,2.52
+## &quot;1233&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.089542036910458,60671,2.68
+## &quot;1234&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.141839762611276,41963,3.14
+## &quot;1235&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.131795072350411,34657,3.04
+## &quot;1236&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0427995971802618,66515,2.59
+## &quot;1237&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0626076967260195,61958,2.04
+## &quot;1238&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0277777777777778,76686,2.82
+## &quot;1239&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0348727615457116,75481,2.99
+## &quot;1240&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0547798066595059,52835,2.57
+## &quot;1241&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.0428015564202335,30256,3.6
+## &quot;1242&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.19672131147541,31071,3.22
+## &quot;1243&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0236898779612347,80164,3.17
+## &quot;1244&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0602975724353955,73194,2.91
+## &quot;1245&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.108043217286915,71027,2.64
+## &quot;1246&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0494987468671679,81837,3.13
+## &quot;1247&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0207532667179093,101728,2.62
+## &quot;1248&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0761358984854687,95750,2.81
+## &quot;1249&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.00763358778625954,65943,2.83
+## &quot;1250&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0467032967032967,79255,2.72
+## &quot;1251&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0491202346041056,74386,2.83
+## &quot;1252&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0147124386981721,100474,2.21
+## &quot;1253&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0360892388451444,79948,2.26
+## &quot;1254&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.0350808040993299,81429,2.1
+## &quot;1255&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0475059382422803,77222,2.87
+## &quot;1256&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0613718411552347,94728,2.7
+## &quot;1257&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0191082802547771,73668,2.62
+## &quot;1258&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.118245390972664,63250,2.48
+## &quot;1259&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0,52444,3.52
+## &quot;1260&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0545625587958608,36750,4.1
+## &quot;1261&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0591044776119403,49531,2.73
+## &quot;1262&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0414428242517268,46250,3.07
+## &quot;1263&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0673366834170854,45407,3.09
+## &quot;1264&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.026498696785404,52690,3.12
+## &quot;1265&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.136175628380528,32394,2.32
+## &quot;1266&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.242767295597484,21417,3.14
+## &quot;1267&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0712800712800713,52743,2.84
+## &quot;1268&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0951173113506658,40962,3.06
+## &quot;1269&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0564231738035264,50182,2.48
+## &quot;1270&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0743529411764706,39712,1.96
+## &quot;1271&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.131071703932151,24041,3.74
+## &quot;1272&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.059375,51581,2.6
+## &quot;1273&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.095464135021097,51606,2.67
+## &quot;1274&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0924281984334204,53455,2.77
+## &quot;1275&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.126009693053312,50234,2.78
+## &quot;1276&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.16427289048474,21621,4.61
+## &quot;1277&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0822306238185255,27843,4.81
+## &quot;1278&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.241379310344828,24098,4.08
+## &quot;1279&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.111023622047244,21809,3.86
+## &quot;1280&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.126416739319965,21436,3.49
+## &quot;1281&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0452380952380952,31852,4.43
+## &quot;1282&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.144812680115274,21045,3.87
+## &quot;1283&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.129881925522253,22112,4.2
+## &quot;1284&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0628907686649503,68884,2.43
+## &quot;1285&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0571227080394922,41621,3.48
+## &quot;1286&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0588949605343048,35450,3.32
+## &quot;1287&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.023961661341853,51709,3.09
+## &quot;1288&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.0225290697674419,10712,2.59
+## &quot;1289&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0310206804536358,57067,2.55
+## &quot;1290&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0457107075767063,67875,2.55
+## &quot;1291&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0,95026,2.81
+## &quot;1292&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0543154761904762,100224,2.87
+## &quot;1293&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.00522648083623693,95948,3.04
+## &quot;1294&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0365650969529086,96432,2.97
+## &quot;1295&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0451745379876797,66096,2.85
+## &quot;1296&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0234029095509171,68689,2.85
+## &quot;1297&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.105220883534137,66042,2.7
+## &quot;1298&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0410783055198973,56250,3.09
+## &quot;1299&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0403167746580274,40173,3.91
+## &quot;1300&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.089478417266187,42130,3.19
+## &quot;1301&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0,52734,3.95
+## &quot;1302&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0925468032497351,47448,2.52
+## &quot;1303&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.0898692810457516,12950,2.6
+## &quot;1304&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0354477611940298,50379,2.67
+## &quot;1305&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0707889125799574,50724,2.75
+## &quot;1306&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0351239669421488,60038,2.89
+## &quot;1307&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0379362670713202,60596,2.99
+## &quot;1308&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0215753424657534,79911,2.37
+## &quot;1309&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0146341463414634,94271,3.03
+## &quot;1310&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0248138957816377,84631,3.02
+## &quot;1311&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0332068311195446,73381,2.81
+## &quot;1312&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0502821959979477,87061,3.07
+## &quot;1313&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.0678627145085803,53696,2.25
+## &quot;1314&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0356798457087753,49223,2.65
+## &quot;1315&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.0655351249410655,53716,1.93
+## &quot;1316&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.194444444444444,19563,3.85
+## &quot;1317&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0807307012374779,31608,3.31
+## &quot;1318&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.0691085003455425,29279,3.05
+## &quot;1319&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.264298093587522,20707,2.72
+## &quot;1320&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.170384138785626,27001,2.3
+## &quot;1321&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0161870503597122,61250,3.78
+## &quot;1322&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0252808988764045,75074,3.82
+## &quot;1323&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0765268579838116,45245,2.46
+## &quot;1324&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0580847723704867,46195,2.24
+## &quot;1325&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0406015037593985,53611,3.69
+## &quot;1326&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0112185686653772,107014,3.42
+## &quot;1327&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0602272727272727,35370,4.22
+## &quot;1328&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0210304942166141,28250,3.64
+## &quot;1329&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.240953221535746,20889,3.58
+## &quot;1330&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.211374407582938,26081,5.04
+## &quot;1331&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.261921708185053,21910,2.98
+## &quot;1332&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.291777188328912,24420,3.06
+## &quot;1333&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.130519480519481,33761,3.86
+## &quot;1334&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.131302521008403,28750,3.82
+## &quot;1335&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0247892910262766,70965,2.73
+## &quot;1336&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0102647217720151,38587,3.32
+## &quot;1337&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0204081632653061,40760,3.9
+## &quot;1338&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0,95018,2.3
+## &quot;1339&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0513091774662788,52372,2.81
+## &quot;1340&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0754226267880364,52832,3.2
+## &quot;1341&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.0254527655408713,63621,3.14
+## &quot;1342&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,TRUE,0.0310606060606061,74350,2.38
+## &quot;1343&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0446428571428571,4856,1.92
+## &quot;1344&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.114017769002961,51493,2.7
+## &quot;1345&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.100054975261132,59976,2.12
+## &quot;1346&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.118856569709127,54475,1.97
+## &quot;1347&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.0803004043905257,82404,1.94
+## &quot;1348&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0139211136890951,102661,2.75
+## &quot;1349&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.03601108033241,77159,2.7
+## &quot;1350&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.133706151499746,36302,2.19
+## &quot;1351&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.0843636363636364,33567,3.44
+## &quot;1352&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.15625,25795,3.12
+## &quot;1353&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.0964408725602755,26663,3.82
+## &quot;1354&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0790251107828656,62625,2.64
+## &quot;1355&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0578084555651424,79726,2.24
+## &quot;1356&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0352112676056338,49012,3.38
+## &quot;1357&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.156351791530945,26438,3.12
+## &quot;1358&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.115155131264916,54823,2.82
+## &quot;1359&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0123192287091591,59815,2.81
+## &quot;1360&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0524861878453039,36483,3
+## &quot;1361&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0503496503496504,41000,3.67
+## &quot;1362&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0827586206896552,27285,3.43
+## &quot;1363&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.111920529801324,25365,4.46
+## &quot;1364&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0652294085129906,43277,3.05
+## &quot;1365&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0112559241706161,43193,3.43
+## &quot;1366&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,TRUE,0.0591990713871155,51250,2.54
+## &quot;1367&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.057652711050103,44432,2.96
+## &quot;1368&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0587557603686636,37850,2.87
+## &quot;1369&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.140565317035905,36667,3.02
+## &quot;1370&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0417376490630324,49329,2.89
+## &quot;1371&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.0974358974358974,29107,3.28
+## &quot;1372&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.120122753178431,37933,2.77
+## &quot;1373&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.042483660130719,44024,3.43
+## &quot;1374&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0572876071706937,46284,2.85
+## &quot;1375&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.153987167736022,23784,4.17
+## &quot;1376&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.145695364238411,25755,3.88
+## &quot;1377&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0189222542163719,20254,1.87
+## &quot;1378&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.115577889447236,37092,2.85
+## &quot;1379&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.0829856281872972,29882,3.88
+## &quot;1380&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,FALSE,0.00651701665459812,43969,3.24
+## &quot;1381&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0520833333333333,51366,3.03
+## &quot;1382&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0861064891846922,60039,2.22
+## &quot;1383&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.0864406779661017,5229,2.91
+## &quot;1384&quot;,&quot;Santa Clara&quot;,&quot;no_maj_re&quot;,TRUE,0.165647058823529,32456,2.61
+## &quot;1385&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,TRUE,0.157120743034056,26540,2.94
+## &quot;1386&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0705967976710335,62196,1.99
+## &quot;1387&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0344463971880492,59302,2.43
+## &quot;1388&quot;,&quot;Santa Clara&quot;,&quot;nh_white&quot;,FALSE,0.0296052631578947,67885,2.8
+## &quot;1389&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.16711051930759,23981,4.14
+## &quot;1390&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.152823920265781,23354,4.71
+## &quot;1391&quot;,&quot;Santa Clara&quot;,&quot;hisp_latino&quot;,FALSE,0.107949790794979,24954,5.23
+## &quot;1392&quot;,&quot;Santa Clara&quot;,&quot;nh_asian&quot;,FALSE,0.03125,42988,3.4
+## &quot;1393&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0728218465539662,32417,2.74
+## &quot;1394&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0814624759461193,28233,3.56
+## &quot;1395&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.297071129707113,22736,2.03
+## &quot;1396&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0815217391304348,33333,3.46
+## &quot;1397&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0372300819061802,49698,2.31
+## &quot;1398&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0821812596006144,42827,2.83
+## &quot;1399&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.0880503144654088,24328,3.23
+## &quot;1400&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.115194054500413,37933,2.75
+## &quot;1401&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0776053215077605,31978,3.51
+## &quot;1402&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.154952076677316,26721,2.89
+## &quot;1403&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.065587044534413,41442,3.12
+## &quot;1404&quot;,&quot;Solano&quot;,&quot;hisp_latino&quot;,TRUE,0.116680361544782,25917,3.44
+## &quot;1405&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0276110444177671,47897,3.01
+## &quot;1406&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.11036717062635,34916,2.16
+## &quot;1407&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.087181903864279,32033,2.73
+## &quot;1408&quot;,&quot;Solano&quot;,&quot;hisp_latino&quot;,TRUE,0.186147186147186,21563,2.91
+## &quot;1409&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.103950103950104,27931,2.53
+## &quot;1410&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0797144556811422,35309,3.08
+## &quot;1411&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,TRUE,0.0380827314510834,31925,2.67
+## &quot;1412&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.0835181079083518,27717,3.11
+## &quot;1413&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0546601261387526,50273,2.61
+## &quot;1414&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.164300202839757,24239,3
+## &quot;1415&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0838168923275306,52866,2.52
+## &quot;1416&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.132539091586001,30000,2.5
+## &quot;1417&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.184952978056426,51280,2.05
+## &quot;1418&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0176923076923077,53254,2.5
+## &quot;1419&quot;,&quot;Solano&quot;,&quot;hisp_latino&quot;,TRUE,0.177238805970149,19884,3.34
+## &quot;1420&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0726855394032135,31739,3.17
+## &quot;1421&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.129965947786606,28821,3.05
+## &quot;1422&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0265438786565547,49327,2.61
+## &quot;1423&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0837742504409171,24653,3.15
+## &quot;1424&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.31891495601173,15821,2.03
+## &quot;1425&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0830830830830831,31800,2.67
+## &quot;1426&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.196418255343732,23916,3.34
+## &quot;1427&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0611638954869359,31817,3.42
+## &quot;1428&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0366379310344828,54010,3.06
+## &quot;1429&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0151946818613485,42230,3.2
+## &quot;1430&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0508388408744281,41027,2.95
+## &quot;1431&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0886075949367089,31010,3.37
+## &quot;1432&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.145106091718001,26760,2.69
+## &quot;1433&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.211079274116523,25517,2.53
+## &quot;1434&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0361681329423265,26429,3.62
+## &quot;1435&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0471299093655589,50315,2.6
+## &quot;1436&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.176417641764176,30212,2.62
+## &quot;1437&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.145045045045045,27259,3.23
+## &quot;1438&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0289778714436249,41597,2.94
+## &quot;1439&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.14041095890411,26563,3.14
+## &quot;1440&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.0928338762214984,21833,2.49
+## &quot;1441&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0439061317183952,35081,2.96
+## &quot;1442&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0908641975308642,35577,2.64
+## &quot;1443&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.12855910267472,37197,2.37
+## &quot;1444&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.162383177570093,31203,3.09
+## &quot;1445&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.103275529865125,31590,2.46
+## &quot;1446&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.067775974025974,45909,2.67
+## &quot;1447&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,NA,NA,2499,NA
+## &quot;1448&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0763326226012793,27099,3.32
+## &quot;1449&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.037237643872715,37977,2.66
+## &quot;1450&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0159924741298213,57917,3
+## &quot;1451&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0659425911559348,47681,2.59
+## &quot;1452&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0977872947894361,31922,3.33
+## &quot;1453&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.151875571820677,30216,2.55
+## &quot;1454&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.144356955380577,29609,2.69
+## &quot;1455&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.277699859747546,21289,2.88
+## &quot;1456&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.129677980852916,20965,2.25
+## &quot;1457&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.111229946524064,24130,2.58
+## &quot;1458&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0186601407158152,52275,3.22
+## &quot;1459&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0977301387137453,27244,3.12
+## &quot;1460&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0911492734478203,40865,2.63
+## &quot;1461&quot;,&quot;Solano&quot;,&quot;nh_asian&quot;,FALSE,0.0487804878048781,36980,2.89
+## &quot;1462&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.00568585643212509,44225,3.38
+## &quot;1463&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0443037974683544,45354,2.72
+## &quot;1464&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0226063829787234,38827,2.74
+## &quot;1465&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.0789297658862876,31551,2.55
+## &quot;1466&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0680212014134276,49517,2.59
+## &quot;1467&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0319634703196347,50873,2.88
+## &quot;1468&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0768115942028986,38594,2.95
+## &quot;1469&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.095836947094536,42012,2.51
+## &quot;1470&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0846994535519126,35866,3.02
+## &quot;1471&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0663688576898532,42799,3.03
+## &quot;1472&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0810126582278481,40543,3.3
+## &quot;1473&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.0247240618101545,41439,3.67
+## &quot;1474&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.103281853281853,33021,2.94
+## &quot;1475&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,TRUE,0.0760286225402504,25926,3.29
+## &quot;1476&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,TRUE,0,41671,3.47
+## &quot;1477&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,TRUE,0.0487804878048781,22459,2.88
+## &quot;1478&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.235012872379551,32303,1.68
+## &quot;1479&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0376059322033898,52602,3.08
+## &quot;1480&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0709987966305656,47201,2.96
+## &quot;1481&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.03125,38443,3.07
+## &quot;1482&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0,54350,3.27
+## &quot;1483&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.056406124093473,22569,3.06
+## &quot;1484&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.128712871287129,34621,3.11
+## &quot;1485&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.032166508987701,54051,2.99
+## &quot;1486&quot;,&quot;Solano&quot;,&quot;nh_white&quot;,FALSE,0.0474967907573813,36523,3.2
+## &quot;1487&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,FALSE,0.124378109452736,31506,3.23
+## &quot;1488&quot;,&quot;Solano&quot;,&quot;no_maj_re&quot;,NA,NA,NA,NA
+## &quot;1489&quot;,&quot;Sonoma&quot;,&quot;hisp_latino&quot;,TRUE,0.127701934015927,26491,2.82
+## &quot;1490&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.135593220338983,25417,2.22
+## &quot;1491&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.114269788182832,51954,2.29
+## &quot;1492&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0992693373645755,57120,2.35
+## &quot;1493&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0606159895150721,46865,2.67
+## &quot;1494&quot;,&quot;Sonoma&quot;,&quot;hisp_latino&quot;,FALSE,0.12585969738652,27276,3.79
+## &quot;1495&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.1139924365208,28684,2.18
+## &quot;1496&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.128329297820823,38518,2.24
+## &quot;1497&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0542412002308136,44931,1.93
+## &quot;1498&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,TRUE,0.029126213592233,37403,2.66
+## &quot;1499&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.10995670995671,49336,1.89
+## &quot;1500&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0193370165745856,37073,2.77
+## &quot;1501&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0424328147100424,35402,3.13
+## &quot;1502&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0707446808510638,31314,2.52
+## &quot;1503&quot;,&quot;Sonoma&quot;,&quot;no_maj_re&quot;,FALSE,0.105555555555556,31355,3
+## &quot;1504&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.109090909090909,33378,2.48
+## &quot;1505&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0796826491893756,27037,2.52
+## &quot;1506&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,TRUE,0.141798941798942,28899,2.51
+## &quot;1507&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0565942395149065,41161,2.6
+## &quot;1508&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0997990622906899,34855,2.49
+## &quot;1509&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.101028162717926,48570,2.08
+## &quot;1510&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0759620189905048,36906,2.55
+## &quot;1511&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.040510127531883,57051,2.49
+## &quot;1512&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,TRUE,0.0951048951048951,31756,2.47
+## &quot;1513&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.11578449905482,37170,2.33
+## &quot;1514&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,TRUE,0.0680306905370844,32385,2.62
+## &quot;1515&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0412451361867704,33750,2.54
+## &quot;1516&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0451998505790063,36205,2.37
+## &quot;1517&quot;,&quot;Sonoma&quot;,&quot;hisp_latino&quot;,TRUE,0.180582524271845,26518,3.5
+## &quot;1518&quot;,&quot;Sonoma&quot;,&quot;no_maj_re&quot;,TRUE,0.153846153846154,27390,2.74
+## &quot;1519&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.110520722635494,27142,2.89
+## &quot;1520&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.100677637947725,35500,2.58
+## &quot;1521&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0789748953974895,39399,2.2
+## &quot;1522&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0381194409148666,38995,2.34
+## &quot;1523&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0465042708003796,32062,3.29
+## &quot;1524&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.149165848871443,34388,2.41
+## &quot;1525&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.116827438370847,39494,2.62
+## &quot;1526&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0772870662460568,54885,2.64
+## &quot;1527&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.113756613756614,30141,2.76
+## &quot;1528&quot;,&quot;Sonoma&quot;,&quot;no_maj_re&quot;,FALSE,0.0816070307595731,28641,3.04
+## &quot;1529&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,TRUE,0.118105849582173,35435,1.95
+## &quot;1530&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0529907667603372,39801,2.8
+## &quot;1531&quot;,&quot;Sonoma&quot;,&quot;hisp_latino&quot;,TRUE,0.104919292851653,30895,3.29
+## &quot;1532&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.060968660968661,34410,2.62
+## &quot;1533&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.077215878194671,30551,2.15
+## &quot;1534&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.115680072300045,39661,2.26
+## &quot;1535&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0554371002132196,48267,2.31
+## &quot;1536&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0974391005621487,38506,2.25
+## &quot;1537&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.053970223325062,47993,2.51
+## &quot;1538&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.152360515021459,35656,2.66
+## &quot;1539&quot;,&quot;Sonoma&quot;,&quot;hisp_latino&quot;,TRUE,0.150492994291645,28321,3.51
+## &quot;1540&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0821484992101106,37383,2.79
+## &quot;1541&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0242146596858639,38842,2.85
+## &quot;1542&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,TRUE,0.132295719844358,28742,2.42
+## &quot;1543&quot;,&quot;Sonoma&quot;,&quot;no_maj_re&quot;,TRUE,0.105804857966241,27299,2.61
+## &quot;1544&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0394138453764528,41731,2.84
+## &quot;1545&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0551816958277254,16068,2.92
+## &quot;1546&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,TRUE,0.166431593794076,26636,2.27
+## &quot;1547&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,TRUE,0.0641099026903263,35438,2.22
+## &quot;1548&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.116149284966864,30493,2.27
+## &quot;1549&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0891741845940319,35741,2.38
+## &quot;1550&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0638185654008439,36791,2.74
+## &quot;1551&quot;,&quot;Sonoma&quot;,&quot;no_maj_re&quot;,FALSE,0.0556117290192113,28058,2.92
+## &quot;1552&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0689119170984456,43542,2.46
+## &quot;1553&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.126509488211616,28294,2.05
+## &quot;1554&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0175513698630137,34875,2.74
+## &quot;1555&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0387537993920973,50000,2.65
+## &quot;1556&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,TRUE,0.0736968244457759,40000,2.56
+## &quot;1557&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.100305810397554,36219,3
+## &quot;1558&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0681421083284799,31849,2.55
+## &quot;1559&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.156343442973088,38463,2.53
+## &quot;1560&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0727630285152409,37128,2.44
+## &quot;1561&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,TRUE,0.119354838709677,28650,1.79
+## &quot;1562&quot;,&quot;Sonoma&quot;,&quot;no_maj_re&quot;,TRUE,0.207165661582121,27340,2.51
+## &quot;1563&quot;,&quot;Sonoma&quot;,&quot;no_maj_re&quot;,FALSE,0.111052353252247,30046,3.41
+## &quot;1564&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.130755064456722,34705,2.21
+## &quot;1565&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0976331360946746,39253,2.1
+## &quot;1566&quot;,&quot;Sonoma&quot;,&quot;hisp_latino&quot;,TRUE,0.167855183763028,28435,3.41
+## &quot;1567&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.163184641445511,31619,2.3
+## &quot;1568&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0477021524141943,44734,3.06
+## &quot;1569&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.129143988124691,37917,2.4
+## &quot;1570&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0624529721595184,37074,2.9
+## &quot;1571&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.12,41292,2.75
+## &quot;1572&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.129356172474897,48019,2.73
+## &quot;1573&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.00884520884520885,42003,2.76
+## &quot;1574&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0862973760932945,41388,1.68
+## &quot;1575&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0993520518358531,46667,1.69
+## &quot;1576&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.107881136950904,32977,2.96
+## &quot;1577&quot;,&quot;Sonoma&quot;,&quot;hisp_latino&quot;,TRUE,0.150397686189443,25022,3.08
+## &quot;1578&quot;,&quot;Sonoma&quot;,&quot;hisp_latino&quot;,TRUE,0.131011608623549,21568,3.19
+## &quot;1579&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0752324598478445,45318,2.95
+## &quot;1580&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.12096106048053,35147,2.77
+## &quot;1581&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0714801444043321,55234,2.6
+## &quot;1582&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.12761780104712,28359,2.89
+## &quot;1583&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0617906683480454,37422,2.74
+## &quot;1584&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,TRUE,0.0845283018867925,27561,2.89
+## &quot;1585&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.0561848663343906,34116,2.61
+## &quot;1586&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.155128205128205,34375,1.92
+## &quot;1587&quot;,&quot;Sonoma&quot;,&quot;nh_white&quot;,FALSE,0.168307086614173,31182,2.15
+## &quot;1588&quot;,&quot;Sonoma&quot;,&quot;no_maj_re&quot;,NA,NA,NA,NA</code></pre>
 </div>
 
 

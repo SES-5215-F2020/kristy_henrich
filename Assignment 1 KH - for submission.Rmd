@@ -209,7 +209,7 @@ bayareaCA2018
 ```
 
 ## Showing the first 10 rows
-Finally, I pulled up the first 10 rows for the assignment. To recap, I am conducting an analysis on the following:
+Finally, I pulled up the first 10 rows for the assignment and saved my .csv file. To recap, I am conducting an analysis on the following:
 
   1. unit of analysis : tract-level
   2. definition of sample population : census tracts in the nine-county Bay Area
@@ -219,6 +219,7 @@ Finally, I pulled up the first 10 rows for the assignment. To recap, I am conduc
 ```{r}
 head(bayareaCA2018, 10)
 ```
+
 ```{r}
-write.csv(bayareaCA2018)
+write.csv(bayareaCA2018,"C:/Users/Kristy Henrich/Documents/GitHub/kristy_henrich-quant/bayareaCA2018.csv", row.names = TRUE)
 ```

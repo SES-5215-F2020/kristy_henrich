@@ -69,17 +69,17 @@ income_sd <- sd(tract_data$med_incomeE, na.rm = TRUE)
 income_conf_int <- t.test(tract_data$med_incomeE)
 
 paste("The sample mean for median income is $",
-      prettyNum(income_summary["Mean"], digits=3))
+      prettyNum(income_summary["Mean"], big.mark = ",", digits=3))
 
 paste("The sample median for median income is $",
-      prettyNum(income_summary["Median"], digits=3))
+      prettyNum(income_summary["Median"], big.mark = ",", digits=3))
 
 paste("The sample standard deviation for median income is $",
-      prettyNum(income_sd, digits = 3))
+      prettyNum(income_sd, big.mark = ",", digits = 3))
 
 paste("The sample interquartile range for median income is $",
-      prettyNum(income_summary["1st Qu."], digits=5),"to $", 
-      prettyNum(income_summary["3rd Qu."], digits=5))
+      prettyNum(income_summary["1st Qu."], big.mark = ",", digits=5),"to $", 
+      prettyNum(income_summary["3rd Qu."], big.mark = ",", digits=5))
 ```
 
 ```{r, avg household size statistics}
@@ -88,10 +88,10 @@ hh_size_sd <- sd(tract_data$avg_hh_sizeE, na.rm = TRUE)
 hh_size_conf_int <- t.test(tract_data$avg_hh_sizeE)
 
 paste("The sample mean for average household size is",
-      prettyNum(hh_size_summary["Mean"], digits=3,"people"))
+      prettyNum(hh_size_summary["Mean"], digits=3), "people")
 
 paste("The sample median for average household size is",
-      prettyNum(hh_size_summary["Median"], digits=3,"people"))
+      prettyNum(hh_size_summary["Median"], digits=3),"people")
 
 paste("The sample standard deviation for average household size is",
       prettyNum(hh_size_sd, digits = 3),"people")
@@ -109,22 +109,22 @@ summary_table <- tibble(
                 "Standard deviation",
                 "Interquartile range",
                 "Population mean (95% confidence)"),
-  `Percent households without internet` = c(paste(prettyNum(no_internet_summary["Mean"]*100, digits=3),"%"),
+  `Households without internet (%)` = c(paste(prettyNum(no_internet_summary["Mean"]*100, digits=3),"%"),
   paste(prettyNum(no_internet_summary["Median"]*100, digits=3),"%"),
   paste(prettyNum(no_internet_sd*100, digits=3),"%"),
   paste(prettyNum(no_internet_summary["1st Qu."]*100, digits=3), "% to", 
   prettyNum(no_internet_summary["3rd Qu."]*100, digits=3), "%"),
   paste(prettyNum(no_internet_conf_int$conf.int[1]*100, digits=3), "% to",
         prettyNum(no_internet_conf_int$conf.int[2]*100, digits=3), "%")),
-  `Median income` =  
-c(prettyNum(income_summary["Mean"], digits=3), 
-  prettyNum(income_summary["Median"], digits=3),
-  prettyNum(income_sd, digits = 3),
-  paste(prettyNum(income_summary["1st Qu."], digits=5),"to", 
-        prettyNum(income_summary["3rd Qu."], digits=5)),
-  paste(prettyNum(income_conf_int$conf.int[1], digits=3), "to",
-        prettyNum(income_conf_int$conf.int[2], digits=3))),
-  `Average household size` =
+  `Median income ($)` =  
+c(prettyNum(income_summary["Mean"], big.mark = ",", digits=3), 
+  prettyNum(income_summary["Median"], big.mark = ",", digits=3),
+  prettyNum(income_sd, big.mark = ",", digits = 3),
+  paste(prettyNum(income_summary["1st Qu."], big.mark = ",", digits=5),"to", 
+        prettyNum(income_summary["3rd Qu."], big.mark = ",", digits=5)),
+  paste(prettyNum(income_conf_int$conf.int[1], big.mark = ",", digits=3), "to",
+        prettyNum(income_conf_int$conf.int[2], big.mark = ",", digits=3))),
+  `Average household size (people)` =
 c(prettyNum(hh_size_summary["Mean"], digits=3), 
   prettyNum(hh_size_summary["Median"], digits=3),
   prettyNum(hh_size_sd, digits = 3),
@@ -178,23 +178,23 @@ ggplot(tract_data, aes(x = med_incomeE)) +
   theme_economist() +
   scale_x_continuous(name = "Median income ($)",
                      breaks = breaks <- seq(0, 120000, by = 20000),
-                     labels = paste(breaks)) + 
+                     labels = scales::comma) + 
   scale_y_continuous(name = "Number of tracts in sample",
                      breaks = breaks <- seq(0, 40, by = 5),
                      labels = paste(breaks)) +
   annotate("text", x = 70000, y = 35, size = 3, 
-           label = paste("Population mean (95% confidence):",
-                         prettyNum(income_conf_int$conf.int[1], digits=3), "to",
-                         prettyNum(income_conf_int$conf.int[2], digits=3),
-                         "\nSample mean:", 
-                         prettyNum(income_summary["Mean"], digits=3),
-                         "\nSample median:",
-                         prettyNum(income_summary["Median"], digits=3),
-                         "\nSample standard deviation:",
-                         prettyNum(income_sd, digits = 3), 
-                         "\nSample interquartile range:",
-                         prettyNum(income_summary["1st Qu."], digits=5),"to", 
-                         prettyNum(income_summary["3rd Qu."], digits=5)),
+           label = paste("Population mean (95% confidence): $",
+                         prettyNum(income_conf_int$conf.int[1], big.mark = ",", digits=3), "to",
+                         prettyNum(income_conf_int$conf.int[2], big.mark = ",", digits=3),
+                         "\nSample mean: $", 
+                         prettyNum(income_summary["Mean"], big.mark = ",", digits=3),
+                         "\nSample median: $",
+                         prettyNum(income_summary["Median"], big.mark = ",", digits=3),
+                         "\nSample standard deviation: $",
+                         prettyNum(income_sd, big.mark = ",", digits = 3), 
+                         "\nSample interquartile range: $",
+                         prettyNum(income_summary["1st Qu."], big.mark = ",", digits=5),"to $", 
+                         prettyNum(income_summary["3rd Qu."], big.mark = ",", digits=5)),
            hjust = 0, vjust = 1) 
   
 ```

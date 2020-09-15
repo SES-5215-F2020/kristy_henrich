@@ -174,7 +174,7 @@ The distribution of percent of tract households without internet access is prett
 ```{r, warning=FALSE}
 options(scipen = 999)
 ggplot(tract_data, aes(x = med_incomeE)) + 
-  geom_histogram(bins = 200) +
+  geom_histogram(color = "gray", bins = 200) +
   theme_economist() +
   scale_x_continuous(name = "Median income ($)",
                      breaks = breaks <- seq(0, 120000, by = 20000),
@@ -198,6 +198,8 @@ ggplot(tract_data, aes(x = med_incomeE)) +
            hjust = 0, vjust = 1) 
   
 ```
+This distribution also feels fairly normal with a skew to the right. There are many more values to the right in this distribution than the one above for percent of households without internet access, driving the mean up from the median by over $4,000.
+
 
 #### Average household size
 
@@ -246,7 +248,7 @@ napa <- t.test(tract_data$county == "Napa")
 san_francisco <- t.test(tract_data$county == "San Francisco")
 san_mateo <- t.test(tract_data$county == "San Mateo")
 santa_clara <- t.test(tract_data$county == "Santa Clara")
-solano <- t.test(tract_data$county == "Sonano")
+solano <- t.test(tract_data$county == "Solano")
 sonoma <- t.test(tract_data$county == "Sonoma")
 ```
 

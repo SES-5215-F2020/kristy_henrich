@@ -1,0 +1,178 @@
+---
+title: "Quant Assignment 3"
+author: "Kristy Henrich"
+date: "9/18/2020"
+output: 
+  html_document:
+    theme: lumen
+    toc: true
+    toc_float: true
+---
+## Setup & load libraries
+For this assignment, I took advantage of Cat's really helpful assignment example. I appreciate how she annotates her file clearly, which is helping me learn as I am working on quant assignments.
+
+During class on Tuesday, I'd like to discuss some of my chi-test results with data points less than 5, how to set up bulleted lists, and how to add a % sign to a y-axis.
+
+```{r setup, include=FALSE, results = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggplot2)
+tract_data <- read_csv("bayareaCA2018.csv") %>%
+  filter(avg_hh_sizeE > 0)
+```
+
+## Relationships between continuous variables
+
+Run correlation tests to test the relationships between three continuous variables:
+* 1. Percent of population that has no internet access : no_internet
+* 2. Median income : med_income
+* 3. Average household size : avg_hh_size
+  
+```{r, results = FALSE, warning = FALSE}
+correlation1 <- cor.test(tract_data$pct_no_internet, tract_data$med_incomeE)
+correlation1
+correlation2 <- cor.test(tract_data$pct_no_internet, tract_data$avg_hh_sizeE)
+correlation2
+correlation3 <- cor.test(tract_data$med_incomeE, tract_data$avg_hh_sizeE)
+correlation3
+```
+
+The correlation tests found the following relationships: 
+* 1. percent of households with no internet access & median income: a moderate, but statistically signficant, negative correlation at a 95% confidence level 
+* 2. percent of households with no internet access & household size: no statistically significant relationship
+* 3. median income & houeshold size: a weak, but statistically significant, negative correlation at a 95% confidence level
+  
+As Cat did in her sample code, I decided to look at the weak but statistically significant relationship between median income and household size.
+
+```{r, results = FALSE, warning = FALSE}
+ggplot(tract_data, aes(x = med_incomeE, y = avg_hh_sizeE)) + 
+    geom_point(size = 0.5, alpha = 0.25, position = "jitter") +
+    geom_smooth() +
+    theme_bw() +
+    scale_x_continuous(name = "Median Income ($)",
+                       labels = scales :: comma) +
+    scale_y_continuous(name = "Household Size (# persons)",
+                      breaks = seq(0, 10, by = 1), 
+                      labels = paste("",
+                                  prettyNum(seq(0, 10, by = 1),
+                                            big.mark = ","))) 
+```
+
+## Relationships between categorical variables
+
+Run chi-square tests to test the relationships between three categorical variables:
+* 1. Bay Area county : county
+* 2. Majority race / ethnicity of the population : maj_re
+* 3. Whether the majority of the units are occupied by renters vs. owners : maj_units_rented
+
+### County & majority race/ethnicity
+```{r, results = FALSE, warning = FALSE}
+chi_sq_county_race <- chisq.test(tract_data$county, tract_data$maj_re)
+chi_sq_county_race
+chi_sq_county_race$observed
+chi_sq_county_race$expected
+```
+Several of my categories violate the chi-square observed table. However, the p-value is so much less than 0.05, so I have assumed a statistically significant relationship between county and majority race/ethnicity.  
+
+### County & majority units rented
+```{r, results = FALSE, warning = FALSE}
+chi_sq_county_rent <- chisq.test(tract_data$county, tract_data$maj_units_rented)
+chi_sq_county_rent
+chi_sq_county_rent$observed
+chi_sq_county_rent$expected
+```
+None of my categories violate the chi-square observed table, and the p-value is much less than 0.05. There is a statistically significant relationship between county and whether a majority of units are rented (TRUE) vs. owned (FALSE).  
+
+### Majority race/ethnicity & majority units rented
+```{r, results = FALSE, warning = FALSE}
+chi_sq_race_rent <- chisq.test(tract_data$maj_re, tract_data$maj_units_rented)
+chi_sq_race_rent
+chi_sq_race_rent$observed
+chi_sq_race_rent$expected
+```
+One data point (counties that are majority Black and do not have a majority of units rented); however, the p-value is much less than 0.05. I will conclude that there is a statistically significant relationship between majority race/ethnicity and whether a majority of units are rented (TRUE) vs. owned (FALSE).  
+
+## Relationship between continuous variables and rent (two-category categorical variable)
+
+Run two-sample t-tests to test the relationships between whether a majority of the units are rented and three continuous variables:
+* 1. Percent of population that has no internet access : no_internet
+* 2. Median income : med_income
+* 3. Average household size : avg_hh_size
+
+```{r}
+difference1 = t.test(pct_no_internet ~ maj_units_rented == "TRUE", 
+                    data = tract_data)
+difference1
+difference2 = t.test(med_incomeE ~ maj_units_rented == "TRUE", 
+                    data = tract_data)
+difference2
+difference3 = t.test(avg_hh_sizeE ~ maj_units_rented == "TRUE", 
+                    data = tract_data)
+difference3
+```
+For all three tests, zero is not included in the 95 percent confidence interval and the p-value is much less than 0.05, so I can conclude there is a statistically significant relationship between:
+1. majority units rented & percent without internet: tracts with a majority of units rented have a greater percent of households with no internet access
+2. majority units rented & median income: tracts with a majority of units rented have a lower median income
+3. majority units rented & household size: tracts with a majority of units rented have a smaller household size
+
+
+
+
+## Relationship between continuous variables and two categorical variables (county and race/ethnicity)
+
+I use the anova test to find the relationship between race and my continuous variables: age, unemployment, and educational attainment. 
+
+### Relationship between county and continuous variables
+```{r}
+anova <- aov (pct_no_internet ~ county, data = tract_data)
+summary(anova)
+anova <- aov (med_incomeE ~ county, data = tract_data)
+summary(anova)
+anova <- aov (avg_hh_sizeE ~ county, data = tract_data)
+summary(anova)
+```
+There is a significant association at the 95 percent confidence level between:
+1. county & percent without internet
+2. county & median income
+3. county & avg household size
+
+All of the p-values were much less than 0.05.
+
+### Relationship between majority race/ethnicity and continuous variables
+```{r}
+anova <- aov (pct_no_internet ~ maj_re, data = tract_data)
+summary(anova)
+anova <- aov (med_incomeE ~ maj_re, data = tract_data)
+summary(anova)
+anova <- aov (avg_hh_sizeE ~ maj_re, data = tract_data)
+summary(anova)
+```
+
+There is a significant association at the 95 percent confidence level between:
+1. majority race/ethnicity & percent without internet
+2. majority race/ethnicity & median income
+3. majority race/ethnicity & avg household size
+
+All of the p-values were much less than 0.05.
+
+### Box plot
+As Cat did in her assignment, I displayed a relationship using a box plot (county and percent of households without internet access).
+```{r}
+ggplot(tract_data, aes(x = county, y = pct_no_internet*100)) +
+  geom_boxplot() +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_x_discrete(name = "County") +
+  scale_y_continuous(name = "Percent of households without internet access",
+                     breaks = seq(0, 100, by = 10),
+                     labels = paste(prettyNum(seq(0, 100, by = 10), 
+                                              big.mark = ",")))
+```
+
+
+
+
+
+
+
+

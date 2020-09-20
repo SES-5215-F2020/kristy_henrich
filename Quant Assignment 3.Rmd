@@ -11,8 +11,6 @@ output:
 ## Setup & load libraries
 For this assignment, I took advantage of Cat's really helpful assignment example. I appreciate how she annotates her file clearly, which is helping me learn as I am working on quant assignments.
 
-During class on Tuesday, I'd like to discuss some of my chi-test results with data points less than 5, how to set up bulleted lists, and how to add a % sign to a y-axis.
-
 ```{r setup, include=FALSE, results = FALSE, warning = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
@@ -23,10 +21,10 @@ tract_data <- read_csv("bayareaCA2018.csv") %>%
 
 ## Relationships between continuous variables
 
-Run correlation tests to test the relationships between three continuous variables:
-* 1. Percent of population that has no internet access : no_internet
-* 2. Median income : med_income
-* 3. Average household size : avg_hh_size
+Run correlation tests to test the relationships between three continuous variables:  
+ 1. Percent of population that has no internet access : no_internet  
+ 2. Median income : med_income  
+ 3. Average household size : avg_hh_size
   
 ```{r, results = FALSE, warning = FALSE}
 correlation1 <- cor.test(tract_data$pct_no_internet, tract_data$med_incomeE)
@@ -124,12 +122,12 @@ I use the anova test to find the relationship between race and my continuous var
 
 ### Relationship between county and continuous variables
 ```{r}
-anova <- aov (pct_no_internet ~ county, data = tract_data)
-summary(anova)
-anova <- aov (med_incomeE ~ county, data = tract_data)
-summary(anova)
-anova <- aov (avg_hh_sizeE ~ county, data = tract_data)
-summary(anova)
+anova1 <- aov (pct_no_internet ~ county, data = tract_data)
+summary(anova1)
+anova2 <- aov (med_incomeE ~ county, data = tract_data)
+summary(anova2)
+anova3 <- aov (avg_hh_sizeE ~ county, data = tract_data)
+summary(anova3)
 ```
 There is a significant association at the 95 percent confidence level between:
 1. county & percent without internet
@@ -140,12 +138,12 @@ All of the p-values were much less than 0.05.
 
 ### Relationship between majority race/ethnicity and continuous variables
 ```{r}
-anova <- aov (pct_no_internet ~ maj_re, data = tract_data)
-summary(anova)
-anova <- aov (med_incomeE ~ maj_re, data = tract_data)
-summary(anova)
-anova <- aov (avg_hh_sizeE ~ maj_re, data = tract_data)
-summary(anova)
+anova4 <- aov (pct_no_internet ~ maj_re, data = tract_data)
+summary(anova4)
+anova5 <- aov (med_incomeE ~ maj_re, data = tract_data)
+summary(anova5)
+anova6 <- aov (avg_hh_sizeE ~ maj_re, data = tract_data)
+summary(anova6)
 ```
 
 There is a significant association at the 95 percent confidence level between:
@@ -158,15 +156,14 @@ All of the p-values were much less than 0.05.
 ### Box plot
 As Cat did in her assignment, I displayed a relationship using a box plot (county and percent of households without internet access).
 ```{r}
-ggplot(tract_data, aes(x = county, y = pct_no_internet*100)) +
+ggplot(tract_data, aes(x = county, y = pct_no_internet)) +
   geom_boxplot() +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90)) +
   scale_x_discrete(name = "County") +
   scale_y_continuous(name = "Percent of households without internet access",
-                     breaks = seq(0, 100, by = 10),
-                     labels = paste(prettyNum(seq(0, 100, by = 10), 
-                                              big.mark = ",")))
+                     breaks = seq(0, 1, by = .1),
+                     labels = scales::percent)
 ```
 
 

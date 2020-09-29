@@ -1,0 +1,44 @@
+---
+title: "Quant Assignment 4"
+author: "Kristy Henrich"
+date: "9/24/2020"
+output: html_document
+---
+## Setup & load libraries
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+library(tidyverse)
+```
+
+## Load csv
+Load csv file. I chose to mutate the majority race/ethnicity categorical variable with white-non Hispanic results to be the comparison for the other race/ethnicity categories. I chose to leave Alameda county as the comparison for all other counties because it is where I most recently lived and worked, and I have an interest in how it compares to other counties.
+
+```{r, message=FALSE, warning = FALSE}
+tract_data <- read_csv("bayareaCA2018.csv") %>%
+  mutate(maj_re = case_when(
+    maj_re =="nh_white" ~ "1_nh_white", 
+    maj_re == "nh_asian" ~ "nh_asian", 
+    maj_re == "nh_black" ~ "nh_black", 
+    maj_re == "no_maj_re" ~ "no_maj_re",
+    maj_re == "hisp_latino" ~ "hisp_latino"))
+```
+
+## Regression
+```{r}
+model <- lm(pct_no_internet ~ county + maj_re + maj_units_rented + med_incomeE + avg_hh_sizeE, 
+            data = tract_data)
+
+summary(model)
+```
+
+## Interpreting results
+Using Carole's tutorial and lecture, I have taken a pass at interpreting my results below:  
+ 1. The multiple R-squared value is 0.4866, which tells me that this model predicts about 49% of variations in internet access in households at the tract level  
+ 2. However, not all coefficients are statistically significant. Several counties, Marin, Napa, and San Mateo, show no statistically significant relationship for their coefficients, meaning we cannot say that living in these counties plays a statistically significant role in predicting internet access. Marin, Santa Clara, Solano, and Sonoma do have statistically significant relationships to internet access but not at the 95% confidence level. The county coefficient results can be summarized as follows: Contra Costa, Marin, Napa, Santa Clara, and Somona all have slight decreases in internet access at the household level while San Francisco and San Mateo have slight increases  
+ 3. For majority race/ethnicity of the tract (categorical), holding all other variables equal, there are also very small changes between tracts that are majority white non-Hispanic and other races/ethnicities. Tracts that are not majority white-non Hispanic show a slight increase in internet access at the household level. Additionally, all of their p-values show statistical significance to this relationship  
+ 4. The coefficients for my two continuous independent variables, median income and average household size, show that median income and average household size decrease as a larger percent of households lack internet access. This decrease is quite small (1.7e-6 for median income and .031 for average household size)  
+ 5. Finally, when a majority of units are rented in the tract, there is a slight increase (0.013) compared to when a majority of units are owned

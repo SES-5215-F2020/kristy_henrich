@@ -427,13 +427,17 @@ summary(model)</code></pre>
 </div>
 <div id="interpreting-results" class="section level2">
 <h2>Interpreting results</h2>
-<p>Using Carole’s tutorial and lecture, I have taken a pass at interpreting my results below:<br />
-1. The multiple R-squared value is 0.4866, which tells me that this model predicts about 49% of variations in internet access in households at the tract level. It is important to note that all relationships are not statistically significant</p>
-<ol start="2" style="list-style-type: decimal">
-<li><p>Several counties, Marin, Napa, and San Mateo, show no statistically significant relationship for their coefficients, meaning we cannot say that living in these counties plays a statistically significant role in predicting internet access when controlling for other variables. Marin, Santa Clara, Solano, and Sonoma do have statistically significant relationships to internet access but not at the 95% confidence level. The county coefficient results can be summarized as follows: Contra Costa, Marin, Napa, Santa Clara, and Somona all have slight decreases in internet access at the household level while San Francisco and San Mateo have slight increases</p></li>
-<li><p>For majority race/ethnicity of the tract (categorical), holding all other variables equal, there are also very small changes between tracts that are majority white non-Hispanic and other races/ethnicities. Tracts that are not majority white-non Hispanic show a slight increase in internet access at the household level. Additionally, all of their p-values show statistical significance to this relationship</p></li>
+<p>Using Carole’s tutorial and lecture, I have taken a pass at interpreting my results below:</p>
+<ol style="list-style-type: decimal">
+<li><p>The multiple R-squared value is 0.4866, which tells me that this model predicts about 49% of variations in internet access in households at the tract level. It is important to note that all relationships are not statistically significant</p></li>
+<li><p>Several counties, Marin, Napa, and San Mateo, show no statistically significant relationship for their coefficients, meaning we cannot say that living in these counties plays a statistically significant role in predicting internet access when controlling for other variables.</p></li>
+</ol>
+<p>Marin, Santa Clara, Solano, and Sonoma do have statistically significant relationships to internet access but not at the 95% confidence level.</p>
+<p>The county coefficient results can be summarized as follows: Contra Costa, Marin, Napa, Santa Clara, and Somona all have slight decreases in a lack of internet access at the household level while San Francisco and San Mateo have slight increases in a lack of internet access</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>For majority race/ethnicity of the tract (categorical), holding all other variables equal, there are also very small changes between tracts that are majority white non-Hispanic and other races/ethnicities. Tracts that are not majority white-non Hispanic show a slight increase in percent of households that lack of internet access. Additionally, all of their p-values show statistical significance to this relationship</p></li>
 <li><p>The coefficients for my two continuous independent variables, median income and average household size, show that median income and average household size decrease as a larger percent of households lack internet access. This decrease is quite small (1.7e-6 for median income and .031 for average household size)</p></li>
-<li><p>Finally, when a majority of units are rented in the tract, there is a slight increase (0.013) compared to when a majority of units are owned</p></li>
+<li><p>Finally, when a majority of units are rented in the tract, there is a slight increase (0.013) in percent of tract households without access to internet compared to when a majority of units are owned</p></li>
 </ol>
 </div>
 

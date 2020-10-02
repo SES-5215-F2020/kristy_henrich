@@ -1,0 +1,164 @@
+---
+title: "Quant Assignment 5"
+author: "Kristy Henrich"
+date: "10/1/2020"
+output: html_document
+---
+
+Some questions: 1) What to do with non-statisically significant results? 2) How to fix plot?
+
+
+## Setup & load libraries
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(jtools)
+library(interactions)
+library(knitr)
+```
+
+## Load data
+Load csv file. Same as in Assignment 4, I chose to mutate the majority race/ethnicity categorical variable with white-non Hispanic results to be the comparison for the other race/ethnicity categories. I chose to leave Alameda county as the comparison for all other counties because it is where I most recently lived and worked, and I have an interest in how it compares to other counties.
+
+```{r, message=FALSE, warning = FALSE}
+tract_data <- read_csv("bayareaCA2018.csv") %>%
+  mutate(maj_re = case_when(
+    maj_re =="nh_white" ~ "1_nh_white", 
+    maj_re == "nh_asian" ~ "nh_asian", 
+    maj_re == "nh_black" ~ "nh_black", 
+    maj_re == "no_maj_re" ~ "no_maj_re",
+    maj_re == "hisp_latino" ~ "hisp_latino"))
+```
+
+## Initial regression model
+```{r, message=FALSE}
+model1 <- lm(pct_no_internet ~ county + maj_re + maj_units_rented + med_incomeE + avg_hh_sizeE, 
+            data = tract_data)
+
+summary(model1)
+```
+
+## Log transformation
+Try a log transformation on median income
+```{r, message=FALSE}
+model2 <- lm(pct_no_internet ~ county + maj_re + maj_units_rented + log(med_incomeE) + avg_hh_sizeE, 
+            data = tract_data)
+
+summary(model2)
+```
+
+My R-squared value has improved slightly, from 0.48 to 0.50. My interpretation of the results is that for every doubling of the median income, the tract's percent of households without access to internet decreases by 0.08, holding all other variables constant. This result is statistically significant, but I'm not sure how practically significant it is - I'm inclined to say that it has limited practical significance because the change in internet access is so small based on a doubling of median income.
+
+## Converting a continuous variable to a categorical variable
+
+I'd like to see if converting median income to a categorical variable has an effect
+``` {r}
+tract_data <- tract_data %>%
+  mutate(income = case_when(med_incomeE < 25000 ~ "less than 25k",
+                               med_incomeE >= 25000 | med_incomeE < 50000 ~ "25k-less than 50k",
+                               med_incomeE >= 50000 | med_incomeE <75000 ~ "50k-less than 75k",
+                               med_incomeE >= 75000 | med_incomeE < 100000 ~ "75k-less than 100k",
+                               med_incomeE >= 10000 ~ "greater than 100K"))
+
+model3 <- lm(pct_no_internet ~ county + maj_re + maj_units_rented + income + avg_hh_sizeE, 
+            data = tract_data)
+
+summary(model3)
+```
+
+This decreased my R-squared value to 0.42, so it is not a better fitting model
+
+## Adding an interaction term
+
+I was curious to see how a majority of the tract units being rented interacted with my variables
+
+```{r}
+model4 <- lm(pct_no_internet ~ county + maj_re + maj_units_rented + log(med_incomeE) + avg_hh_sizeE + maj_units_rented:county + maj_units_rented:maj_re + maj_units_rented:log(med_incomeE) + maj_units_rented:avg_hh_sizeE,
+             data = tract_data)
+
+summary(model4)
+```
+
+The R-squared value is the highest for this model at 0.53. However, many of my results are not statistically significant. For example, the negative statiscally significant coefficient for median income tells us that as the median decreases (log scale here), the percent of households without access to internet increases. The interaction term between majority of units rented and median income tells us that income has less of an effect on internet access for rented units vs. owned.
+
+## Visualizing the results
+
+```{r}
+ModelFit <- tibble(model = c(1, 2, 3, 4),
+                   R_square = c(summary(model1)$adj.r.squared,
+                                summary(model2)$adj.r.squared,
+                                summary(model3)$adj.r.squared,
+                                summary(model4)$adj.r.squared))
+
+ggplot(ModelFit, aes(x = model, y = R_square)) +
+  geom_line() +
+  scale_x_continuous(name = "",
+                   breaks = breaks <- seq(1, 4, by = 1),
+                   labels = paste("Model", breaks)) +
+  scale_y_continuous(name = "Adjusted R-squared value") +
+  theme_bw()
+```
+Model 4 is my best fit
+
+## Visualize regression results
+
+Model 4 is my best fit, so let's visualize these results where there is statistical significance
+
+```{r}
+coeff_desc <- c("Tracts in Contra Costa" = "county_labelContraCosta",
+                "Tracts in Marin" = "county_labelMarin",
+                "Tracts in Napa" = "county_labelMarin",
+                "Tracts in San Francisco" = "county_label'San Francisco'",
+                "Tracts in San Mateo" = "county_label'San Mateo'",
+                "Tracts in Santa Clara" = "county_label'Santa Clara'",
+                "Tracts in Solano" = "county_labelSolano",
+                "Tracts in Sonoma" = "county_labelSonoma",
+                "Majority Hispanic/Latino tract" = "maj_re_labelhisp_latino",
+                "Majority Asian tract" = "maj_re_labelnh_asian",
+                "Majority Black tract" = "maj_re_labelnh_black",
+                "No majority race/ethnicity tract" = "maj_re_labelno_maj_re",
+                "Tracts with a majority of units rented" = "maj_units_rented_labelTRUE",
+                "Doubling median income" = "log(med_incomeE)",
+                "Avg household size" = "avg_hh_sizeE",
+                "Tracts in Contra Costa with a majority of units rented" = 
+                  "countyContraCosta:maj_units_rentedTRUE",
+                "Tracts in Marin with a majority of units rented" = 
+                  "countyMarin:maj_units_rentedTRUE",
+                "Tracts in Napa with a majority of units rented" = 
+                  "countyNapa:maj_units_rentedTRUE",
+                "Tracts in San Francisco with a majority of units rented" = 
+                  "countySan Francisco:maj_units_rentedTRUE",
+                "Tracts in San Mateo with a majority of units rented" = 
+                  "countySan Mateo:maj_units_rentedTRUE",
+                "Tracts in Santa Clara with a majority of units rented" = 
+                  "countySanta Clara:maj_units_rentedTRUE",
+                "Tracts in Solano with a majority of units rented" = 
+                  "countySolano:maj_units_rentedTRUE",
+                "Tracts in Sonoma with a majority of units rented" = 
+                  "countySonoma:maj_units_rentedTRUE",
+                "Majority Hispanic/Latino tract with a majority of units rented" =
+                  "maj_rehisp_latino:maj_units_rentedTRUE",
+                "Majority Asian tract with a majority of units rented" =
+                  "maj_renh_asian:maj_units_rentedTRUE",
+                "Majority Black tract with a majority of units rented" =
+                  "maj_renh_black:maj_units_rentedTRUE",
+                "No majority race/ethnicity tract with a majority of units rented" =
+                  "maj_reno_maj_re:maj_units_rentedTRUE",
+                "Majority tract units rented and doubling median income" =
+                  "maj_units_rentedTRUE:log(med_incomeE)",
+                "Majority tract units rented and increasing household size by one person" =
+                  "maj_units_rentedTRUE:avg_hh_sizeE")
+
+plot_coefs(model4, 
+           coefs = coeff_desc,
+           plot.distributions = TRUE,
+           rescale.distributions = TRUE) +
+  scale_x_continuous(name = "Effect on percent of households without access to internet")
+```
+
+
+
+

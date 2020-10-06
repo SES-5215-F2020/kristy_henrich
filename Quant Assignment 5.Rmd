@@ -69,20 +69,22 @@ model3 <- lm(pct_no_internet ~ county + maj_re + maj_units_rented + income + avg
 summary(model3)
 ```
 
-This decreased my R-squared value to 0.42, so it is not a better fitting model
+This decreased my R-squared value to 0.42, so it is not a better fitting model.
 
 ## Adding an interaction term
 
-I was curious to see how a majority of the tract units being rented interacted with my variables
+I was curious to see how an interaction between the log of median income and majority race/ethnicity would impact the model fit.
 
 ```{r}
-model4 <- lm(pct_no_internet ~ county + maj_re + maj_units_rented + log(med_incomeE) + avg_hh_sizeE + maj_units_rented:county + maj_units_rented:maj_re + maj_units_rented:log(med_incomeE) + maj_units_rented:avg_hh_sizeE,
+model4 <- lm(pct_no_internet ~ county + maj_re + maj_units_rented + log(med_incomeE) + avg_hh_sizeE + maj_re:log(med_incomeE),
              data = tract_data)
 
 summary(model4)
 ```
+The R-squared value is the highest for this model at 0.53. However, several of my results are not statistically significant. For example, the negative statistically significant coefficient for median income tells us that tracts with lower median incomes have less internet access (i.e. the percent of households without internet access increases).  
 
-The R-squared value is the highest for this model at 0.53. However, many of my results are not statistically significant. For example, the negative statiscally significant coefficient for median income tells us that as the median decreases (log scale here), the percent of households without access to internet increases. The interaction term between majority of units rented and median income tells us that income has less of an effect on internet access for rented units vs. owned.
+The interaction terms between the log of median income and race/ethnicity categories tells us that for every doubling of median income, the percent of households without internet access decreases slightly for Hispanic/Latino, Asian, Black, and no majority race tracts vs. white majority tracts. The effect for Black majority tracts is not statistically significant whereas the other results are.
+
 
 ## Visualizing the results
 
@@ -94,18 +96,18 @@ ModelFit <- tibble(model = c(1, 2, 3, 4),
                                 summary(model4)$adj.r.squared))
 
 ggplot(ModelFit, aes(x = model, y = R_square)) +
-  geom_line() +
-  scale_x_continuous(name = "",
+  geom_col() +
+  scale_x_discrete(name = "Model",
                    breaks = breaks <- seq(1, 4, by = 1),
                    labels = paste("Model", breaks)) +
   scale_y_continuous(name = "Adjusted R-squared value") +
   theme_bw()
 ```
-Model 4 is my best fit
+Model 4 is my best fit.
 
 ## Visualize regression results
 
-Model 4 is my best fit, so let's visualize these results where there is statistical significance
+Model 4 is my best fit, so let's visualize these results.
 
 ```{r}
 coeff_desc <- c("Tracts in Contra Costa" = "county_labelContraCosta",
@@ -123,40 +125,22 @@ coeff_desc <- c("Tracts in Contra Costa" = "county_labelContraCosta",
                 "Tracts with a majority of units rented" = "maj_units_rented_labelTRUE",
                 "Doubling median income" = "log(med_incomeE)",
                 "Avg household size" = "avg_hh_sizeE",
-                "Tracts in Contra Costa with a majority of units rented" = 
-                  "countyContraCosta:maj_units_rentedTRUE",
-                "Tracts in Marin with a majority of units rented" = 
-                  "countyMarin:maj_units_rentedTRUE",
-                "Tracts in Napa with a majority of units rented" = 
-                  "countyNapa:maj_units_rentedTRUE",
-                "Tracts in San Francisco with a majority of units rented" = 
-                  "countySan Francisco:maj_units_rentedTRUE",
-                "Tracts in San Mateo with a majority of units rented" = 
-                  "countySan Mateo:maj_units_rentedTRUE",
-                "Tracts in Santa Clara with a majority of units rented" = 
-                  "countySanta Clara:maj_units_rentedTRUE",
-                "Tracts in Solano with a majority of units rented" = 
-                  "countySolano:maj_units_rentedTRUE",
-                "Tracts in Sonoma with a majority of units rented" = 
-                  "countySonoma:maj_units_rentedTRUE",
-                "Majority Hispanic/Latino tract with a majority of units rented" =
-                  "maj_rehisp_latino:maj_units_rentedTRUE",
-                "Majority Asian tract with a majority of units rented" =
-                  "maj_renh_asian:maj_units_rentedTRUE",
-                "Majority Black tract with a majority of units rented" =
-                  "maj_renh_black:maj_units_rentedTRUE",
-                "No majority race/ethnicity tract with a majority of units rented" =
-                  "maj_reno_maj_re:maj_units_rentedTRUE",
-                "Majority tract units rented and doubling median income" =
-                  "maj_units_rentedTRUE:log(med_incomeE)",
-                "Majority tract units rented and increasing household size by one person" =
-                  "maj_units_rentedTRUE:avg_hh_sizeE")
+                "Interaction: majority Hispanic/Latino tract & log-transformed income" =
+                  "maj_rehisp_latino:log(med_incomeE)",
+                "Interaction: majority Asian tract & log-transformed income" =
+                  "maj_renh_asian:log(med_incomeE)",
+                "Interaction: majority Black tract & log-transformed income" =
+                  "maj_renh_black:log(med_incomeE)",
+                "Interaction: no majority race tract & log-transformed income" =
+                  "maj_reno_maj_re:log(med_incomeE)")
 
 plot_coefs(model4, 
            coefs = coeff_desc,
            plot.distributions = TRUE,
            rescale.distributions = TRUE) +
-  scale_x_continuous(name = "Effect on percent of households without access to internet")
+  scale_x_continuous(name = "Effect on percent of households without access to internet",
+                     limits = c(-5,5),
+                     breaks = seq(-5,5, by = 1))
 ```
 
 

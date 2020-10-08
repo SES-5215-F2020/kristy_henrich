@@ -5,9 +5,6 @@ date: "10/1/2020"
 output: html_document
 ---
 
-Some questions: 1) What to do with non-statisically significant results? 2) How to fix plot?
-
-
 ## Setup & load libraries
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -85,7 +82,6 @@ The R-squared value is the highest for this model at 0.53. However, several of m
 
 The interaction terms between the log of median income and race/ethnicity categories tells us that for every doubling of median income, the percent of households without internet access decreases slightly for Hispanic/Latino, Asian, Black, and no majority race tracts vs. white majority tracts. The effect for Black majority tracts is not statistically significant whereas the other results are.
 
-
 ## Visualizing the results
 
 ```{r}
@@ -96,33 +92,71 @@ ModelFit <- tibble(model = c(1, 2, 3, 4),
                                 summary(model4)$adj.r.squared))
 
 ggplot(ModelFit, aes(x = model, y = R_square)) +
-  geom_col() +
-  scale_x_discrete(name = "Model",
-                   breaks = breaks <- seq(1, 4, by = 1),
+  geom_line() +
+  scale_x_continuous(name = "",
+                   breaks = breaks <- seq(1,4, by = 1),
                    labels = paste("Model", breaks)) +
   scale_y_continuous(name = "Adjusted R-squared value") +
   theme_bw()
 ```
+
+
 Model 4 is my best fit.
+
+
+## Results table
+Here is a table comparing my original model (model 1) to my new, better-fitting model (model 4)
+
+```{r}
+coeff_names <- c("Tracts in Contra Costa" = "countyContraCosta",
+                "Tracts in Marin" = "countyMarin",
+                "Tracts in Napa" = "countyNapa",
+                "Tracts in San Francisco" = "countySan Francisco",
+                "Tracts in San Mateo" = "countySan Mateo",
+                "Tracts in Santa Clara" = "countySanta Clara",
+                "Tracts in Solano" = "countySolano",
+                "Tracts in Sonoma" = "countySonoma",
+                "Majority Hispanic/Latino tract" = "maj_rehisp_latino",
+                "Majority Asian tract" = "maj_renh_asian",
+                "Majority Black tract" = "maj_renh_black",
+                "No majority race/ethnicity tract" = "maj_reno_maj_re",
+                "Tracts with a majority of units rented" = "maj_units_rentedTRUE",
+                "Doubling median income" = "log(med_incomeE)",
+                "Avg household size" = "avg_hh_sizeE",
+                "Interaction: majority Hispanic/Latino tract & log-transformed income" =
+                  "maj_rehisp_latino:log(med_incomeE)",
+                "Interaction: majority Asian tract & log-transformed income" =
+                  "maj_renh_asian:log(med_incomeE)",
+                "Interaction: majority Black tract & log-transformed income" =
+                  "maj_renh_black:log(med_incomeE)",
+                "Interaction: no majority race tract & log-transformed income" =
+                  "maj_reno_maj_re:log(med_incomeE)")
+
+export_summs(model1, model4, 
+             error_format = "(p = {p.value})",
+             error_pos = "same",
+             model.names = c("Initial model", "Preferred model"),
+             coefs = coeff_names)
+```
 
 ## Visualize regression results
 
-Model 4 is my best fit, so let's visualize these results.
+Model 4 is my best fit, so let's visualize these results
 
 ```{r}
-coeff_desc <- c("Tracts in Contra Costa" = "county_labelContraCosta",
-                "Tracts in Marin" = "county_labelMarin",
-                "Tracts in Napa" = "county_labelMarin",
-                "Tracts in San Francisco" = "county_label'San Francisco'",
-                "Tracts in San Mateo" = "county_label'San Mateo'",
-                "Tracts in Santa Clara" = "county_label'Santa Clara'",
-                "Tracts in Solano" = "county_labelSolano",
-                "Tracts in Sonoma" = "county_labelSonoma",
-                "Majority Hispanic/Latino tract" = "maj_re_labelhisp_latino",
-                "Majority Asian tract" = "maj_re_labelnh_asian",
-                "Majority Black tract" = "maj_re_labelnh_black",
-                "No majority race/ethnicity tract" = "maj_re_labelno_maj_re",
-                "Tracts with a majority of units rented" = "maj_units_rented_labelTRUE",
+coeff_desc <- c("Tracts in Contra Costa" = "countyContraCosta",
+                "Tracts in Marin" = "countyMarin",
+                "Tracts in Napa" = "countyNapa",
+                "Tracts in San Francisco" = "countySan Francisco",
+                "Tracts in San Mateo" = "countySan Mateo",
+                "Tracts in Santa Clara" = "countySanta Clara",
+                "Tracts in Solano" = "countySolano",
+                "Tracts in Sonoma" = "countySonoma",
+                "Majority Hispanic/Latino tract" = "maj_rehisp_latino",
+                "Majority Asian tract" = "maj_renh_asian",
+                "Majority Black tract" = "maj_renh_black",
+                "No majority race/ethnicity tract" = "maj_reno_maj_re",
+                "Tracts with a majority of units rented" = "maj_units_rentedTRUE",
                 "Doubling median income" = "log(med_incomeE)",
                 "Avg household size" = "avg_hh_sizeE",
                 "Interaction: majority Hispanic/Latino tract & log-transformed income" =
@@ -138,11 +172,5 @@ plot_coefs(model4,
            coefs = coeff_desc,
            plot.distributions = TRUE,
            rescale.distributions = TRUE) +
-  scale_x_continuous(name = "Effect on percent of households without access to internet",
-                     limits = c(-5,5),
-                     breaks = seq(-5,5, by = 1))
+  scale_x_continuous(name = "Effect on percent of households \nwithout access to internet")
 ```
-
-
-
-

@@ -1,0 +1,194 @@
+---
+title: "Quant Assignment 5 - Extra"
+author: "Kristy Henrich"
+date: "10/7/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(jtools)
+library(interactions)
+library(knitr)
+```
+
+## Load data
+Load csv file. Same as in Assignment 4, I chose to mutate the majority race/ethnicity categorical variable with white-non Hispanic results to be the comparison for the other race/ethnicity categories. I chose to leave Alameda county as the comparison for all other counties because it is where I most recently lived and worked, and I have an interest in how it compares to other counties.
+
+```{r, message=FALSE, warning = FALSE}
+tract_data <- read_csv("bayareaCA2018.csv") %>%
+  mutate(maj_re = case_when(
+    maj_re =="nh_white" ~ "1_nh_white", 
+    maj_re == "nh_asian" ~ "nh_asian", 
+    maj_re == "nh_black" ~ "nh_black", 
+    maj_re == "no_maj_re" ~ "no_maj_re",
+    maj_re == "hisp_latino" ~ "hisp_latino"))
+```
+
+## Initial regression model
+```{r, message=FALSE}
+model1 <- lm(pct_no_internet ~ county + maj_re + maj_units_rented + med_incomeE + avg_hh_sizeE, 
+            data = tract_data)
+
+summary(model1)
+```
+
+## Log transformation
+Try a log transformation on median income
+```{r, message=FALSE}
+model2 <- lm(pct_no_internet ~ county + maj_re + maj_units_rented + log(med_incomeE) + avg_hh_sizeE, 
+            data = tract_data)
+
+summary(model2)
+```
+
+My R-squared value has improved slightly, from 0.48 to 0.50. My interpretation of the results is that for every doubling of the median income, the tract's percent of households without access to internet decreases by 0.08, holding all other variables constant. This result is statistically significant, but I'm not sure how practically significant it is - I'm inclined to say that it has limited practical significance because the change in internet access is so small based on a doubling of median income.
+
+## Converting a continuous variable to a categorical variable
+
+I'd like to see if converting median income to a categorical variable has an effect
+``` {r}
+tract_data <- tract_data %>%
+  mutate(income = case_when(med_incomeE < 25000 ~ "less than 25k",
+                               med_incomeE >= 25000 | med_incomeE < 50000 ~ "25k-less than 50k",
+                               med_incomeE >= 50000 | med_incomeE <75000 ~ "50k-less than 75k",
+                               med_incomeE >= 75000 | med_incomeE < 100000 ~ "75k-less than 100k",
+                               med_incomeE >= 10000 ~ "greater than 100K"))
+
+model3 <- lm(pct_no_internet ~ county + maj_re + maj_units_rented + income + avg_hh_sizeE, 
+            data = tract_data)
+
+summary(model3)
+```
+
+This decreased my R-squared value to 0.42, so it is not a better fitting model.
+
+## Adding an interaction term
+
+I was curious to see how an interaction between the log of median income and majority race/ethnicity would impact the model fit.
+
+```{r}
+model4 <- lm(pct_no_internet ~ county + maj_re + maj_units_rented + log(med_incomeE) + avg_hh_sizeE + maj_re:log(med_incomeE),
+             data = tract_data)
+
+summary(model4)
+```
+The R-squared value is the highest for this model at 0.53. However, several of my results are not statistically significant. For example, the negative statistically significant coefficient for median income tells us that tracts with lower median incomes have less internet access (i.e. the percent of households without internet access increases).  
+
+The interaction terms between the log of median income and race/ethnicity categories tells us that for every doubling of median income, the percent of households without internet access decreases slightly for Hispanic/Latino, Asian, Black, and no majority race tracts vs. white majority tracts. The effect for Black majority tracts is not statistically significant whereas the other results are.
+
+## Visualizing the results
+
+```{r}
+ModelFit <- tibble(model = c(1, 2, 3, 4),
+                   R_square = c(summary(model1)$adj.r.squared,
+                                summary(model2)$adj.r.squared,
+                                summary(model3)$adj.r.squared,
+                                summary(model4)$adj.r.squared))
+
+ggplot(ModelFit, aes(x = model, y = R_square)) +
+  geom_line() +
+  scale_x_continuous(name = "",
+                   breaks = breaks <- seq(1,4, by = 1),
+                   labels = paste("Model", breaks)) +
+  scale_y_continuous(name = "Adjusted R-squared value") +
+  theme_bw()
+```
+
+
+Model 4 is my best fit.
+
+
+## Results table
+```{r}
+coeff_names <- c("Tracts in Contra Costa" = "countyContraCosta",
+                "Tracts in Marin" = "countyMarin",
+                "Tracts in Napa" = "countyNapa",
+                "Tracts in San Francisco" = "countySan Francisco",
+                "Tracts in San Mateo" = "countySan Mateo",
+                "Tracts in Santa Clara" = "countySanta Clara",
+                "Tracts in Solano" = "countySolano",
+                "Tracts in Sonoma" = "countySonoma",
+                "Majority Hispanic/Latino tract" = "maj_rehisp_latino",
+                "Majority Asian tract" = "maj_renh_asian",
+                "Majority Black tract" = "maj_renh_black",
+                "No majority race/ethnicity tract" = "maj_reno_maj_re",
+                "Tracts with a majority of units rented" = "maj_units_rentedTRUE",
+                "Doubling median income" = "log(med_incomeE)",
+                "Avg household size" = "avg_hh_sizeE",
+                "Interaction: majority Hispanic/Latino tract & log-transformed income" =
+                  "maj_rehisp_latino:log(med_incomeE)",
+                "Interaction: majority Asian tract & log-transformed income" =
+                  "maj_renh_asian:log(med_incomeE)",
+                "Interaction: majority Black tract & log-transformed income" =
+                  "maj_renh_black:log(med_incomeE)",
+                "Interaction: no majority race tract & log-transformed income" =
+                  "maj_reno_maj_re:log(med_incomeE)")
+
+export_summs(model1, model4, 
+             error_format = "(p = {p.value})",
+             error_pos = "same",
+             model.names = c("Initial model", "Preferred model"),
+             coefs = coeff_names)
+```
+
+## Visualize regression results
+
+Model 4 is my best fit, so let's visualize these results.
+
+```{r}
+coeff_desc <- c("Tracts in Contra Costa" = "countyContraCosta",
+                "Tracts in Marin" = "countyMarin",
+                "Tracts in Napa" = "countyNapa",
+                "Tracts in San Francisco" = "countySan Francisco",
+                "Tracts in San Mateo" = "countySan Mateo",
+                "Tracts in Santa Clara" = "countySanta Clara",
+                "Tracts in Solano" = "countySolano",
+                "Tracts in Sonoma" = "countySonoma",
+                "Majority Hispanic/Latino tract" = "maj_rehisp_latino",
+                "Majority Asian tract" = "maj_renh_asian",
+                "Majority Black tract" = "maj_renh_black",
+                "No majority race/ethnicity tract" = "maj_reno_maj_re",
+                "Tracts with a majority of units rented" = "maj_units_rentedTRUE",
+                "Doubling median income" = "log(med_incomeE)",
+                "Avg household size" = "avg_hh_sizeE",
+                "Interaction: majority Hispanic/Latino tract & log-transformed income" =
+                  "maj_rehisp_latino:log(med_incomeE)",
+                "Interaction: majority Asian tract & log-transformed income" =
+                  "maj_renh_asian:log(med_incomeE)",
+                "Interaction: majority Black tract & log-transformed income" =
+                  "maj_renh_black:log(med_incomeE)",
+                "Interaction: no majority race tract & log-transformed income" =
+                  "maj_reno_maj_re:log(med_incomeE)")
+
+plot_coefs(model4, 
+           coefs = coeff_desc,
+           plot.distributions = TRUE,
+           rescale.distributions = TRUE) +
+  scale_x_continuous(name = "Effect on percent of households without access to internet")
+```
+
+Here is the predicted relationship between income and majority race/ethnicity holding all other variables at their means.
+
+```{r}
+interact_plot(model4, pred = log(med_incomeE), modx = maj_re_label, interval = TRUE) +
+  scale_x_continuous(name = "Annual income (thousands)",
+                     limits = c(0, 500000),
+                     breaks = breaks <- seq(0, 500000, by = 50000),
+                     labels = paste("$", 
+                                    prettyNum(breaks/1000, big.mark = "'"),
+                                    sep = "")) +
+  scale_y_continuous(name = "Percent of households with no internet access",
+                     breaks = seq(0, 45, by = 5)) +
+  scale_color_discrete(name = "") +
+  scale_linetype_discrete(name = "") +
+  scale_fill_discrete(name = "") 
+```
+
+
+
